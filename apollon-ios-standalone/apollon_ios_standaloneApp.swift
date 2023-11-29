@@ -1,23 +1,13 @@
-//
-//  apollon_ios_standaloneApp.swift
-//  apollon-ios-standalone
-//
-//  Created by Alexander Görtzen on 29.11.23.
-//
-
 import SwiftUI
 import SwiftData
 
 @main
 struct apollon_ios_standaloneApp: App {
+    @AppStorage("isDarkMode") private var isDarkMode = false
     var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+        let modelConfiguration = ModelConfiguration(isStoredInMemoryOnly: false, allowsSave: true)
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            return try ModelContainer(for: ApollonDiagram.self, configurations: modelConfiguration)
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
@@ -26,6 +16,7 @@ struct apollon_ios_standaloneApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(isDarkMode ? .dark : .light)
         }
         .modelContainer(sharedModelContainer)
     }

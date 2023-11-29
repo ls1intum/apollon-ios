@@ -8,13 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		F734D1452B17980D00435866 /* apollon_ios_standaloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1442B17980D00435866 /* apollon_ios_standaloneApp.swift */; };
-		F734D1472B17980D00435866 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1462B17980D00435866 /* ContentView.swift */; };
-		F734D1492B17980D00435866 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1482B17980D00435866 /* Item.swift */; };
-		F734D14B2B17980D00435866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F734D14A2B17980D00435866 /* Assets.xcassets */; };
-		F734D14E2B17980D00435866 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F734D14D2B17980D00435866 /* Preview Assets.xcassets */; };
 		F734D1582B17980E00435866 /* apollon_ios_standaloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1572B17980E00435866 /* apollon_ios_standaloneTests.swift */; };
 		F734D1622B17980E00435866 /* apollon_ios_standaloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1612B17980E00435866 /* apollon_ios_standaloneUITests.swift */; };
 		F734D1642B17980E00435866 /* apollon_ios_standaloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1632B17980E00435866 /* apollon_ios_standaloneUITestsLaunchTests.swift */; };
+		F734D17B2B17996500435866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F734D1772B17996500435866 /* LaunchScreen.storyboard */; };
+		F734D17C2B17996500435866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F734D1782B17996500435866 /* Assets.xcassets */; };
+		F734D17D2B17996500435866 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F734D17A2B17996500435866 /* Preview Assets.xcassets */; };
+		F734D1902B179A1200435866 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1802B179A1100435866 /* SettingsView.swift */; };
+		F734D1912B179A1200435866 /* DiagramDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1822B179A1100435866 /* DiagramDisplay.swift */; };
+		F734D1922B179A1200435866 /* DiagramListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1832B179A1100435866 /* DiagramListCell.swift */; };
+		F734D1932B179A1200435866 /* DiagramListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1842B179A1100435866 /* DiagramListView.swift */; };
+		F734D1942B179A1200435866 /* ExportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1852B179A1100435866 /* ExportButton.swift */; };
+		F734D1952B179A1200435866 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1862B179A1100435866 /* ContentView.swift */; };
+		F734D1962B179A1200435866 /* ApollonStandaloneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1882B179A1200435866 /* ApollonStandaloneViewModel.swift */; };
+		F734D1972B179A1200435866 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D18A2B179A1200435866 /* StringExtension.swift */; };
+		F734D1982B179A1200435866 /* JSONFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D18C2B179A1200435866 /* JSONFile.swift */; };
+		F734D1992B179A1200435866 /* ApollonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D18D2B179A1200435866 /* ApollonColor.swift */; };
+		F734D19A2B179A1200435866 /* ApollonDiagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D18F2B179A1200435866 /* ApollonDiagram.swift */; };
+		F734D19D2B179AEA00435866 /* ApollonEdit in Frameworks */ = {isa = PBXBuildFile; productRef = F734D19C2B179AEA00435866 /* ApollonEdit */; };
+		F734D19F2B179AEA00435866 /* ApollonShared in Frameworks */ = {isa = PBXBuildFile; productRef = F734D19E2B179AEA00435866 /* ApollonShared */; };
+		F734D1A12B179AEA00435866 /* ApollonView in Frameworks */ = {isa = PBXBuildFile; productRef = F734D1A02B179AEA00435866 /* ApollonView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,15 +50,25 @@
 /* Begin PBXFileReference section */
 		F734D1412B17980D00435866 /* apollon-ios-standalone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apollon-ios-standalone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F734D1442B17980D00435866 /* apollon_ios_standaloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apollon_ios_standaloneApp.swift; sourceTree = "<group>"; };
-		F734D1462B17980D00435866 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F734D1482B17980D00435866 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		F734D14A2B17980D00435866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F734D14D2B17980D00435866 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F734D1532B17980E00435866 /* apollon-ios-standaloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apollon-ios-standaloneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F734D1572B17980E00435866 /* apollon_ios_standaloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apollon_ios_standaloneTests.swift; sourceTree = "<group>"; };
 		F734D15D2B17980E00435866 /* apollon-ios-standaloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "apollon-ios-standaloneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F734D1612B17980E00435866 /* apollon_ios_standaloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apollon_ios_standaloneUITests.swift; sourceTree = "<group>"; };
 		F734D1632B17980E00435866 /* apollon_ios_standaloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apollon_ios_standaloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F734D1772B17996500435866 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F734D1782B17996500435866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F734D17A2B17996500435866 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F734D1802B179A1100435866 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F734D1822B179A1100435866 /* DiagramDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramDisplay.swift; sourceTree = "<group>"; };
+		F734D1832B179A1100435866 /* DiagramListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramListCell.swift; sourceTree = "<group>"; };
+		F734D1842B179A1100435866 /* DiagramListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramListView.swift; sourceTree = "<group>"; };
+		F734D1852B179A1100435866 /* ExportButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportButton.swift; sourceTree = "<group>"; };
+		F734D1862B179A1100435866 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F734D1882B179A1200435866 /* ApollonStandaloneViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApollonStandaloneViewModel.swift; sourceTree = "<group>"; };
+		F734D18A2B179A1200435866 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		F734D18C2B179A1200435866 /* JSONFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFile.swift; sourceTree = "<group>"; };
+		F734D18D2B179A1200435866 /* ApollonColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApollonColor.swift; sourceTree = "<group>"; };
+		F734D18F2B179A1200435866 /* ApollonDiagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApollonDiagram.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F734D19D2B179AEA00435866 /* ApollonEdit in Frameworks */,
+				F734D19F2B179AEA00435866 /* ApollonShared in Frameworks */,
+				F734D1A12B179AEA00435866 /* ApollonView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,21 +122,15 @@
 		F734D1432B17980D00435866 /* apollon-ios-standalone */ = {
 			isa = PBXGroup;
 			children = (
+				F734D18B2B179A1200435866 /* Custom */,
+				F734D1892B179A1200435866 /* Extensions */,
+				F734D18E2B179A1200435866 /* Models */,
+				F734D17E2B179A1100435866 /* Views */,
+				F734D1872B179A1200435866 /* ViewModels */,
+				F734D1762B17996500435866 /* Common */,
 				F734D1442B17980D00435866 /* apollon_ios_standaloneApp.swift */,
-				F734D1462B17980D00435866 /* ContentView.swift */,
-				F734D1482B17980D00435866 /* Item.swift */,
-				F734D14A2B17980D00435866 /* Assets.xcassets */,
-				F734D14C2B17980D00435866 /* Preview Content */,
 			);
 			path = "apollon-ios-standalone";
-			sourceTree = "<group>";
-		};
-		F734D14C2B17980D00435866 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F734D14D2B17980D00435866 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F734D1562B17980E00435866 /* apollon-ios-standaloneTests */ = {
@@ -130,6 +150,86 @@
 			path = "apollon-ios-standaloneUITests";
 			sourceTree = "<group>";
 		};
+		F734D1762B17996500435866 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F734D1772B17996500435866 /* LaunchScreen.storyboard */,
+				F734D1782B17996500435866 /* Assets.xcassets */,
+				F734D1792B17996500435866 /* Preview Content */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F734D1792B17996500435866 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F734D17A2B17996500435866 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F734D17E2B179A1100435866 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F734D17F2B179A1100435866 /* Settings */,
+				F734D1812B179A1100435866 /* Diagram */,
+				F734D1862B179A1100435866 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F734D17F2B179A1100435866 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F734D1802B179A1100435866 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F734D1812B179A1100435866 /* Diagram */ = {
+			isa = PBXGroup;
+			children = (
+				F734D1822B179A1100435866 /* DiagramDisplay.swift */,
+				F734D1832B179A1100435866 /* DiagramListCell.swift */,
+				F734D1842B179A1100435866 /* DiagramListView.swift */,
+				F734D1852B179A1100435866 /* ExportButton.swift */,
+			);
+			path = Diagram;
+			sourceTree = "<group>";
+		};
+		F734D1872B179A1200435866 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F734D1882B179A1200435866 /* ApollonStandaloneViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F734D1892B179A1200435866 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F734D18A2B179A1200435866 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F734D18B2B179A1200435866 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				F734D18C2B179A1200435866 /* JSONFile.swift */,
+				F734D18D2B179A1200435866 /* ApollonColor.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		F734D18E2B179A1200435866 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F734D18F2B179A1200435866 /* ApollonDiagram.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +246,11 @@
 			dependencies = (
 			);
 			name = "apollon-ios-standalone";
+			packageProductDependencies = (
+				F734D19C2B179AEA00435866 /* ApollonEdit */,
+				F734D19E2B179AEA00435866 /* ApollonShared */,
+				F734D1A02B179AEA00435866 /* ApollonView */,
+			);
 			productName = "apollon-ios-standalone";
 			productReference = F734D1412B17980D00435866 /* apollon-ios-standalone.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +323,9 @@
 				Base,
 			);
 			mainGroup = F734D1382B17980D00435866;
+			packageReferences = (
+				F734D19B2B179AEA00435866 /* XCRemoteSwiftPackageReference "apollon-ios-module" */,
+			);
 			productRefGroup = F734D1422B17980D00435866 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,8 +342,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F734D14E2B17980D00435866 /* Preview Assets.xcassets in Resources */,
-				F734D14B2B17980D00435866 /* Assets.xcassets in Resources */,
+				F734D17B2B17996500435866 /* LaunchScreen.storyboard in Resources */,
+				F734D17D2B17996500435866 /* Preview Assets.xcassets in Resources */,
+				F734D17C2B17996500435866 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,9 +369,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F734D1472B17980D00435866 /* ContentView.swift in Sources */,
-				F734D1492B17980D00435866 /* Item.swift in Sources */,
+				F734D1922B179A1200435866 /* DiagramListCell.swift in Sources */,
+				F734D1902B179A1200435866 /* SettingsView.swift in Sources */,
+				F734D1942B179A1200435866 /* ExportButton.swift in Sources */,
+				F734D1952B179A1200435866 /* ContentView.swift in Sources */,
+				F734D1912B179A1200435866 /* DiagramDisplay.swift in Sources */,
+				F734D1992B179A1200435866 /* ApollonColor.swift in Sources */,
+				F734D1932B179A1200435866 /* DiagramListView.swift in Sources */,
+				F734D19A2B179A1200435866 /* ApollonDiagram.swift in Sources */,
+				F734D1962B179A1200435866 /* ApollonStandaloneViewModel.swift in Sources */,
+				F734D1972B179A1200435866 /* StringExtension.swift in Sources */,
 				F734D1452B17980D00435866 /* apollon_ios_standaloneApp.swift in Sources */,
+				F734D1982B179A1200435866 /* JSONFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,14 +541,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"apollon-ios-standalone/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "apollon-ios-standalone/Common/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Apollon;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -451,14 +575,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"apollon-ios-standalone/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "apollon-ios-standalone/Common/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Apollon;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -586,6 +716,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F734D19B2B179AEA00435866 /* XCRemoteSwiftPackageReference "apollon-ios-module" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ls1intum/apollon-ios-module";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F734D19C2B179AEA00435866 /* ApollonEdit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F734D19B2B179AEA00435866 /* XCRemoteSwiftPackageReference "apollon-ios-module" */;
+			productName = ApollonEdit;
+		};
+		F734D19E2B179AEA00435866 /* ApollonShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F734D19B2B179AEA00435866 /* XCRemoteSwiftPackageReference "apollon-ios-module" */;
+			productName = ApollonShared;
+		};
+		F734D1A02B179AEA00435866 /* ApollonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F734D19B2B179AEA00435866 /* XCRemoteSwiftPackageReference "apollon-ios-module" */;
+			productName = ApollonView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F734D1392B17980D00435866 /* Project object */;
 }
