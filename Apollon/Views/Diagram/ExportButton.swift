@@ -5,9 +5,11 @@ struct ExportButton: View {
     @State var diagram: ApollonDiagram
     @State private var isExporting = false
     @State private var jsonFileDocument: JSONFile?
-    
+    var saveBeforeExport: () -> Void
+
     var body: some View {
         Button {
+            saveBeforeExport()
             if let encodedDiagram = encodeDiagram(diagram) {
                 jsonFileDocument = JSONFile(text: encodedDiagram)
                 isExporting = true
@@ -25,15 +27,15 @@ struct ExportButton: View {
             }
             ShareLink(item: "PDF",
                       preview: SharePreview(diagram.title, image: Image(uiImage: UIImage(named: "AppIcon") ?? UIImage()))) {
-                Text("PDF (Not implemented)")
+                Text("PDF (Not available)")
             }
             ShareLink(item: "PNG",
                       preview: SharePreview(diagram.title, image: Image(uiImage: UIImage(named: "AppIcon") ?? UIImage()))) {
-                Text("PNG (Not implemented)")
+                Text("PNG (Not available)")
             }
         }
     }
-    
+
     private func encodeDiagram(_ diagram: ApollonDiagram) -> String? {
         do {
             if let modelData = diagram.model.data(using: .utf8) {

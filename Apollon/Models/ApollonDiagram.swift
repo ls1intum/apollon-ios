@@ -3,8 +3,7 @@ import SwiftData
 import ApollonShared
 
 /// The Diagram includes all the information of a UML Diagram which is saved in SwiftData
-@Model
-public class ApollonDiagram {
+@Model public class ApollonDiagram {
     @Attribute(.unique) public var id: String
     @Attribute public var title: String
     @Attribute public var lastUpdate: String

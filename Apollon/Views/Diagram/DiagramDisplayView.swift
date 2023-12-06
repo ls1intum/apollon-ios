@@ -2,14 +2,14 @@ import SwiftUI
 import ApollonShared
 import ApollonEdit
 
-struct DiagramDisplay: View {
+struct DiagramDisplayView: View {
     @Environment(\.dismiss) private var dismiss
-    @StateObject var viewModel: ApollonStandaloneViewModel
-    
+    @StateObject var viewModel: ApollonViewModel
+
     init(diagram: ApollonDiagram) {
-        self._viewModel = StateObject(wrappedValue: ApollonStandaloneViewModel(diagram: diagram))
+        self._viewModel = StateObject(wrappedValue: ApollonViewModel(diagram: diagram))
     }
-    
+
     var body: some View {
         ZStack {
             if let model = viewModel.umlModel, let type = model.type {
@@ -28,6 +28,8 @@ struct DiagramDisplay: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
+                    viewModel.encodeModel()
+                    viewModel.diagram.lastUpdate = Date().ISO8601Format()
                     dismiss()
                 } label: {
                     HStack {
@@ -44,21 +46,10 @@ struct DiagramDisplay: View {
                     .foregroundColor(.white)
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
+                ExportButton(diagram: viewModel.diagram) {
                     viewModel.encodeModel()
                     viewModel.diagram.lastUpdate = Date().ISO8601Format()
-                } label: {
-                    Text("Save")
-                        .padding(3)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 3)
-                                .stroke(ApollonColor.toolBarItemColor, lineWidth: 1)
-                        )
                 }
-                .foregroundColor(ApollonColor.toolBarItemColor)
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                ExportButton(diagram: viewModel.diagram)
             }
         }
         .navigationBarBackButtonHidden(true)

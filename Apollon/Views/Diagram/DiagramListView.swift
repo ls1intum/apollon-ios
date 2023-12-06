@@ -31,11 +31,11 @@ struct DiagramListView: View {
                     List {
                         ForEach(diagrams) { diagram in
                             ZStack {
-                                NavigationLink(destination: DiagramDisplay(diagram: diagram)) {
+                                NavigationLink(destination: DiagramDisplayView(diagram: diagram)) {
                                     EmptyView()
                                 }
                                 .opacity(0.0)
-                                DiagramListCell(diagram: diagram)
+                                DiagramListCellView(diagram: diagram)
                             }
                             .listRowBackground(Color.clear)
                             .listRowSeparator(.hidden)

@@ -1,7 +1,7 @@
 import SwiftUI
 import ApollonShared
 
-struct DiagramListCell: View {
+struct DiagramListCellView: View {
     @State var diagram: ApollonDiagram
 
     var body: some View {
@@ -32,7 +32,7 @@ struct DiagramListCell: View {
 
                 Spacer()
 
-                ExportButton(diagram: diagram)
+                ExportButton(diagram: diagram){}
             }
         }
         .padding(15)

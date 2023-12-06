@@ -2,8 +2,11 @@ import SwiftUI
 import SwiftData
 
 @main
-struct apollon_ios_standaloneApp: App {
+struct ApollonApp: App {
+    // Stores the color scheme preference of the user in AppStorage
     @AppStorage("isDarkMode") private var isDarkMode = false
+    
+    // The SwiftData model container for saving diagrams locally
     var sharedModelContainer: ModelContainer = {
         let modelConfiguration = ModelConfiguration(isStoredInMemoryOnly: false, allowsSave: true)
         do {
@@ -12,7 +15,7 @@ struct apollon_ios_standaloneApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

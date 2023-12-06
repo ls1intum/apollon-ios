@@ -2,9 +2,9 @@ import SwiftUI
 import SwiftData
 
 struct SettingsView: View {
+    @AppStorage("isDarkMode") private var isDarkMode = false
     @Environment(\.modelContext) private var modelContext
     @Query private var diagrams: [ApollonDiagram]
-    @AppStorage("isDarkMode") private var isDarkMode = false
 
     var body: some View {
         NavigationStack {
@@ -22,9 +22,10 @@ struct SettingsView: View {
                                     modelContext.delete(diagram)
                                 }
                             } label: {
-                                Text("Remove")
+                                Text("Remove All")
                                     .padding(5)
                                     .foregroundColor(.red)
+                                    .cornerRadius(3)
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 3)
                                             .stroke(.red, lineWidth: 1)

@@ -2,8 +2,10 @@ import Foundation
 import ApollonShared
 
 @MainActor
-class ApollonStandaloneViewModel: ObservableObject {
+class ApollonViewModel: ObservableObject {
+    // The locally persisted diagram
     @Published var diagram: ApollonDiagram
+    // The UMLModel
     @Published var umlModel: UMLModel?
     
     init(diagram: ApollonDiagram) {
@@ -21,7 +23,7 @@ class ApollonStandaloneViewModel: ObservableObject {
         }
     }
     
-    // Encode Model from UMLModel to ApollonDiagram
+    // Encode model from UMLModel to ApollonDiagram
     func encodeModel() {
         do {
             let jsonData = try JSONEncoder().encode(self.umlModel)
