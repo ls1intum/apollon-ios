@@ -18,6 +18,7 @@ struct DiagramDisplayView: View {
                     set: { viewModel.umlModel = $0 }),
                             diagramType: type,
                             fontSize: 14.0,
+                            themeColor: Color.accentColor,
                             diagramOffset: CGPoint(x: 0, y: 0),
                             isGridBackground: true)
             }
@@ -29,7 +30,7 @@ struct DiagramDisplayView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
                     viewModel.encodeModel()
-                    viewModel.diagram.lastUpdate = Date().ISO8601Format()
+                    viewModel.diagram.lastUpdate = Date().ISO8601FormatWithFractionalSeconds()
                     dismiss()
                 } label: {
                     HStack {
@@ -48,7 +49,7 @@ struct DiagramDisplayView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 ExportButton(diagram: viewModel.diagram) {
                     viewModel.encodeModel()
-                    viewModel.diagram.lastUpdate = Date().ISO8601Format()
+                    viewModel.diagram.lastUpdate = Date().ISO8601FormatWithFractionalSeconds()
                 }
             }
         }

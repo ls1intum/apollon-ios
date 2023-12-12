@@ -54,7 +54,9 @@ struct DiagramListCellView: View {
     }
 
     private func formatDate(dateString: String) -> String {
-        if let isoDate = ISO8601DateFormatter().date(from: dateString) {
+        let isoFormatter = ISO8601DateFormatter()
+        isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        if let isoDate = isoFormatter.date(from: dateString) {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d, yyyy 'at' h:mm:ss a"
             return dateFormatter.string(from: isoDate)

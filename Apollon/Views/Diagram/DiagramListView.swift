@@ -7,10 +7,40 @@ struct DiagramListView: View {
     @Query private var diagrams: [ApollonDiagram]
     @State private var isImporting = false
     @State private var shouldNavigate = false
+    @State private var errorMessage: String = ""
 
     var body: some View {
         NavigationStack {
             VStack {
+                if errorMessage != "" {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Import failed")
+                                .foregroundColor(.red)
+                                .bold()
+                            Spacer()
+                            Button {
+                                errorMessage = ""
+                            } label: {
+                                Image(systemName: "x.circle")
+                                    .foregroundColor(.red)
+                            }
+                        }
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                    }
+                    .padding(5)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 3)
+                            .stroke(.red, lineWidth: 1)
+                    }
+                    .background {
+                        RoundedRectangle(cornerRadius: 3)
+                            .foregroundColor(Color.red.opacity(0.1))
+                    }
+                    .padding(.top, 10)
+                    .padding(.horizontal, 15)
+                }
                 if diagrams.isEmpty {
                     Spacer()
 
@@ -86,16 +116,28 @@ struct DiagramListView: View {
                             let file = read(from: selectedFile)
                             switch file {
                             case .success(let stringValue):
-                                let impDiagram = try JSONDecoder().decode(Diagram.self, from: Data(stringValue.utf8))
-                                let jsonModelData = try JSONEncoder().encode(impDiagram.model)
-                                if let jsonModelString = String(data: jsonModelData, encoding: .utf8), let type = impDiagram.diagramType {
-                                    let apollonDiagram = ApollonDiagram(id: impDiagram.id, title: impDiagram.title, lastUpdate: impDiagram.lastUpdate, diagramType: type, model: jsonModelString)
-                                    modelContext.insert(apollonDiagram)
+                                let importedDiagram = try JSONDecoder().decode(Diagram.self, from: Data(stringValue.utf8))
+                                let jsonModelData = try JSONEncoder().encode(importedDiagram.model)
+                                if let jsonModelString = String(data: jsonModelData, encoding: .utf8) {
+                                    if let type = importedDiagram.model?.type, !UMLDiagramType.isDiagramTypeUnsupported(diagramType: type) {
+                                        let apollonDiagram = ApollonDiagram(id: importedDiagram.id, title: importedDiagram.title, lastUpdate: importedDiagram.lastUpdate, diagramType: type, model: jsonModelString)
+                                        if (diagrams.first(where: { $0.id == apollonDiagram.id}) == nil) {
+                                            modelContext.insert(apollonDiagram)
+                                        } else {
+                                            errorMessage = "A diagram with the same ID already exists."
+                                            print(errorMessage)
+                                        }
+                                    } else {
+                                        errorMessage = "This diagram type is not supported."
+                                        print(errorMessage)
+                                    }
                                 } else {
-                                    print("Error when importing")
+                                    errorMessage = "Could not import selected file. Are you sure it contains a diagram.json?"
+                                    print(errorMessage)
                                 }
                             case .failure(let error):
-                                print("Error: \(error)")
+                                errorMessage = "Error whilst reading file: \(error)"
+                                print(errorMessage)
                             }
                         } catch {
                             print(error.localizedDescription)
