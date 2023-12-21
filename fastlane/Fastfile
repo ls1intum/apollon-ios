@@ -31,7 +31,7 @@ platform :ios do
     # Run Unit Tests
     scan(
       clean: true,
-      scheme: "ArtemisExamCheck"
+      scheme: "Apollon"
     )
   end
 
@@ -85,7 +85,6 @@ platform :ios do
     # from the apple developer portal
     get_provisioning_profile(
       api_key: api_key,
-      adhoc: true,
       force: true
     )
 
@@ -119,7 +118,7 @@ platform :ios do
     build_ios_app(
       clean: true, # Do a clean build each time
       output_name: "App.ipa", # The name of the output artifact
-      export_method: "ad-hoc", # Export for ad-hoc signing
+      export_method: "app-store", # Export for ad-hoc signing
       configuration: "Release", # Build with release configuration
       cloned_source_packages_path: ".SwiftPackages", # Custom path for cloning source packages to
       derived_data_path: ".DerivedData", # Custom derived data path
