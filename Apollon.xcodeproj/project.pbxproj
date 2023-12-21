@@ -28,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06FAB0C42B347540004B02DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F734D1412B17980D00435866 /* Apollon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apollon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F734D1442B17980D00435866 /* ApollonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApollonApp.swift; sourceTree = "<group>"; };
 		F734D1782B17996500435866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06FAB0C52B3475A7004B02DA /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				06FAB0C42B347540004B02DA /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
 		F734D1382B17980D00435866 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +88,7 @@
 		F734D1432B17980D00435866 /* Apollon */ = {
 			isa = PBXGroup;
 			children = (
+				06FAB0C52B3475A7004B02DA /* Supporting */,
 				F734D18B2B179A1200435866 /* Custom */,
 				F734D1892B179A1200435866 /* Extensions */,
 				F734D18E2B179A1200435866 /* Models */,
@@ -398,6 +408,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Apollon/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Apollon;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -433,6 +444,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Apollon/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Apollon;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
