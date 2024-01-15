@@ -497,7 +497,7 @@
 			repositoryURL = "https://github.com/ls1intum/apollon-ios-module";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
