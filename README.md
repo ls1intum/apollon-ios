@@ -13,7 +13,7 @@ The user interface of Apollon iOS is simple to use.
 -   Supports dark/light themes for the editor.
 -   Offline Mode: Diagrams are saved locally on your device with SwiftData.
 
-<img src="/Documentation/Apollon-iOS-Demo.gif" alt="Apollon iOS features" width="300"/>
+<img src="/docs/Apollon-iOS-Demo.gif" alt="Apollon iOS features" width="300"/>
 
 ### Import and Export
 Apollon iOS allows importing JSON files for diagrams created on [Apollon Standalone](https://apollon.ase.in.tum.de).
@@ -30,7 +30,7 @@ The list of UML diagrams includes:
 ## Screenshots
 | Diagrams | Editor | Export |
 |    :---:    |    :---:    |    :---:    |
-| <img src="/Documentation/Screenshots/Diagrams-Screenshot.png" width="300"/> | <img src="/Documentation/Screenshots/Editor-Screenshot.png" width="300"/> | <img src="/Documentation/Screenshots/Share-Screenshot.png" width="300"/> |
+| <img src="/docs/screenshots/Diagrams-Screenshot.png" width="300"/> | <img src="/docs/screenshots/Editor-Screenshot.png" width="300"/> | <img src="/docs/screenshots/Share-Screenshot.png" width="300"/> |
 
 ## Usage
 1. Clone the repository
