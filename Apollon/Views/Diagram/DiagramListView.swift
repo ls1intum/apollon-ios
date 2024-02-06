@@ -90,20 +90,6 @@ struct DiagramListView: View {
                         .foregroundColor(.white)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Menu {
-                        ForEach(UMLDiagramType.allCases, id: \.self) { type in
-                            if !UMLDiagramType.isDiagramTypeUnsupported(diagramType: type) {
-                                Button(type.rawValue.insertSpaceBeforeCapitalLetters()) {
-                                    addDiagram(diagramType: type)
-                                }
-                            }
-                        }
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                    .foregroundColor(ApollonColor.toolBarItemColor)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         isImporting.toggle()
                     } label: {
@@ -143,6 +129,20 @@ struct DiagramListView: View {
                             print(error.localizedDescription)
                         }
                     }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu {
+                        ForEach(UMLDiagramType.allCases, id: \.self) { type in
+                            if !UMLDiagramType.isDiagramTypeUnsupported(diagramType: type) {
+                                Button(type.rawValue.insertSpaceBeforeCapitalLetters()) {
+                                    addDiagram(diagramType: type)
+                                }
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .foregroundColor(ApollonColor.toolBarItemColor)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
