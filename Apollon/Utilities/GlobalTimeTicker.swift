@@ -1,10 +1,3 @@
-//
-//  GlobalTimeTicker.swift
-//  Apollon
-//
-//  Created by Andrew Koo on 2/16/24.
-//
-
 import Foundation
 import Combine
 
