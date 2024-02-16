@@ -8,6 +8,8 @@ struct DiagramListView: View {
     @State private var isImporting = false
     @State private var shouldNavigate = false
     @State private var errorMessage: String = ""
+    
+    @StateObject private var timeTicker = GlobalTimeTicker()
 
     var body: some View {
         NavigationStack {
@@ -65,7 +67,7 @@ struct DiagramListView: View {
                                     EmptyView()
                                 }
                                 .opacity(0.0)
-                                DiagramListCellView(diagram: diagram)
+                                DiagramListCellView(diagram: diagram, timeTicker: timeTicker)
                             }
                             .listRowBackground(Color.clear)
                             .listRowSeparator(.hidden)

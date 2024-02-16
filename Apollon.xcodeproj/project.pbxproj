@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B58A49A42B7FE37B00C7D881 /* GlobalTimeTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58A49A32B7FE37B00C7D881 /* GlobalTimeTicker.swift */; };
 		F734D1452B17980D00435866 /* ApollonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1442B17980D00435866 /* ApollonApp.swift */; };
 		F734D17C2B17996500435866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F734D1782B17996500435866 /* Assets.xcassets */; };
 		F734D17D2B17996500435866 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F734D17A2B17996500435866 /* Preview Assets.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		06FAB0C42B347540004B02DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B58A49A32B7FE37B00C7D881 /* GlobalTimeTicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTimeTicker.swift; sourceTree = "<group>"; };
 		F734D1412B17980D00435866 /* Apollon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apollon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F734D1442B17980D00435866 /* ApollonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApollonApp.swift; sourceTree = "<group>"; };
 		F734D1782B17996500435866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
+		B58A49A22B7FE37200C7D881 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B58A49A32B7FE37B00C7D881 /* GlobalTimeTicker.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		F734D1382B17980D00435866 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 		F734D1432B17980D00435866 /* Apollon */ = {
 			isa = PBXGroup;
 			children = (
+				B58A49A22B7FE37200C7D881 /* Utilities */,
 				06FAB0C52B3475A7004B02DA /* Supporting */,
 				F734D18B2B179A1200435866 /* Custom */,
 				F734D1892B179A1200435866 /* Extensions */,
@@ -266,6 +277,7 @@
 				F734D1912B179A1200435866 /* DiagramDisplayView.swift in Sources */,
 				F734D1992B179A1200435866 /* ApollonColor.swift in Sources */,
 				F734D1932B179A1200435866 /* DiagramListView.swift in Sources */,
+				B58A49A42B7FE37B00C7D881 /* GlobalTimeTicker.swift in Sources */,
 				F734D19A2B179A1200435866 /* ApollonDiagram.swift in Sources */,
 				F734D1962B179A1200435866 /* ApollonViewModel.swift in Sources */,
 				F734D1972B179A1200435866 /* StringExtension.swift in Sources */,

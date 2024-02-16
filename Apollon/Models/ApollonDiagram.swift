@@ -6,16 +6,22 @@ import ApollonShared
 @Model public class ApollonDiagram {
     @Attribute(.unique) public var id: String
     @Attribute public var title: String
+    @Attribute public var firstCreated: String
     @Attribute public var lastUpdate: String
     @Attribute public var diagramType: UMLDiagramType
     @Attribute public var model: String
 
-    public init(id: String? = nil, title: String? = nil, lastUpdate: String? = nil, diagramType: UMLDiagramType, model: String? = nil) {
+    public init(id: String? = nil, title: String? = nil, lastUpdate: String? = nil, firstCreated: String? = nil, diagramType: UMLDiagramType, model: String? = nil) {
+        let now = Date().ISO8601FormatWithFractionalSeconds()
+
         self.id = id ?? UUID().uuidString.lowercased()
         self.title = title ?? diagramType.rawValue.insertSpaceBeforeCapitalLetters()
-        self.lastUpdate = lastUpdate ?? Date().ISO8601FormatWithFractionalSeconds()
         self.diagramType = diagramType
         self.model = model ?? ""
+
+        let tempFirstCreated = firstCreated ?? now
+        self.lastUpdate = lastUpdate ?? now
+        self.firstCreated = tempFirstCreated
     }
 }
 
