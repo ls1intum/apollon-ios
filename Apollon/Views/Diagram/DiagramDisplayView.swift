@@ -5,10 +5,8 @@ import ApollonEdit
 struct DiagramDisplayView: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject var viewModel: ApollonViewModel
-
-    init(diagram: ApollonDiagram) {
-        self._viewModel = StateObject(wrappedValue: ApollonViewModel(diagram: diagram))
-    }
+    @State private var isExporting = false
+    @State private var jsonFileDocument: JSONFile?
 
     var body: some View {
         ZStack {
@@ -47,9 +45,32 @@ struct DiagramDisplayView: View {
                     .foregroundColor(.white)
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                ExportButton(diagram: viewModel.diagram) {
+                Button {
                     viewModel.encodeModel()
                     viewModel.diagram.lastUpdate = Date().ISO8601FormatWithFractionalSeconds()
+                    if let encodedDiagram = ApollonDiagram.encodeDiagram(viewModel.diagram) {
+                        jsonFileDocument = JSONFile(text: encodedDiagram)
+                        isExporting = true
+                    }
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundColor(ApollonColor.toolBarItemColor)
+                }
+                .confirmationDialog("Select an export format", isPresented: $isExporting, titleVisibility: .visible) {
+                    if let jsonFileDocument {
+                        ShareLink(item: jsonFileDocument,
+                                  preview: SharePreview(viewModel.diagram.title, image: Image(uiImage: UIImage(named: "AppIcon") ?? UIImage()))) {
+                            Text("JSON")
+                        }
+                    }
+                    ShareLink(item: "PDF",
+                              preview: SharePreview(viewModel.diagram.title, image: Image(uiImage: UIImage(named: "AppIcon") ?? UIImage()))) {
+                        Text("PDF (Not available)")
+                    }
+                    ShareLink(item: "PNG",
+                              preview: SharePreview(viewModel.diagram.title, image: Image(uiImage: UIImage(named: "AppIcon") ?? UIImage()))) {
+                        Text("PNG (Not available)")
+                    }
                 }
             }
         }

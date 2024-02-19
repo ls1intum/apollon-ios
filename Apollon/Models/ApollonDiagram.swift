@@ -17,4 +17,25 @@ import ApollonShared
         self.diagramType = diagramType
         self.model = model ?? ""
     }
+
+    static func encodeDiagram(_ diagram: ApollonDiagram) -> String? {
+        do {
+            if let modelData = diagram.model.data(using: .utf8) {
+                let modelDecoded = try JSONDecoder().decode(UMLModel.self, from: modelData)
+                let otherDiagram = Diagram(id: diagram.id,
+                                           title: diagram.title,
+                                           lastUpdate: diagram.lastUpdate,
+                                           diagramType: diagram.diagramType,
+                                           model: modelDecoded)
+                let jsonData = try JSONEncoder().encode(otherDiagram)
+                if let jsonString = String(data: jsonData, encoding: .utf8) {
+                    return jsonString
+                }
+            }
+        } catch {
+            print("Could not encode diagram: \(error)")
+            return nil
+        }
+        return nil
+    }
 }

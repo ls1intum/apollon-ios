@@ -1,7 +1,6 @@
 import Foundation
 import ApollonShared
 
-@MainActor
 class ApollonViewModel: ObservableObject {
     // The locally persisted diagram
     @Published var diagram: ApollonDiagram
@@ -10,6 +9,7 @@ class ApollonViewModel: ObservableObject {
     
     init(diagram: ApollonDiagram) {
         self.diagram = diagram
+        decodeModel()
     }
     
     // Decode model from ApollonDiagram to UMLModel

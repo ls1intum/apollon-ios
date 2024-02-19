@@ -13,7 +13,6 @@
 		F734D1912B179A1200435866 /* DiagramDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1822B179A1100435866 /* DiagramDisplayView.swift */; };
 		F734D1922B179A1200435866 /* DiagramListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1832B179A1100435866 /* DiagramListCellView.swift */; };
 		F734D1932B179A1200435866 /* DiagramListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1842B179A1100435866 /* DiagramListView.swift */; };
-		F734D1942B179A1200435866 /* ExportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1852B179A1100435866 /* ExportButton.swift */; };
 		F734D1962B179A1200435866 /* ApollonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1882B179A1200435866 /* ApollonViewModel.swift */; };
 		F734D1972B179A1200435866 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D18A2B179A1200435866 /* StringExtension.swift */; };
 		F734D1982B179A1200435866 /* JSONFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D18C2B179A1200435866 /* JSONFile.swift */; };
@@ -36,7 +35,6 @@
 		F734D1822B179A1100435866 /* DiagramDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramDisplayView.swift; sourceTree = "<group>"; };
 		F734D1832B179A1100435866 /* DiagramListCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramListCellView.swift; sourceTree = "<group>"; };
 		F734D1842B179A1100435866 /* DiagramListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagramListView.swift; sourceTree = "<group>"; };
-		F734D1852B179A1100435866 /* ExportButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportButton.swift; sourceTree = "<group>"; };
 		F734D1882B179A1200435866 /* ApollonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApollonViewModel.swift; sourceTree = "<group>"; };
 		F734D18A2B179A1200435866 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F734D18C2B179A1200435866 /* JSONFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFile.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 				F734D1822B179A1100435866 /* DiagramDisplayView.swift */,
 				F734D1832B179A1100435866 /* DiagramListCellView.swift */,
 				F734D1842B179A1100435866 /* DiagramListView.swift */,
-				F734D1852B179A1100435866 /* ExportButton.swift */,
 			);
 			path = Diagram;
 			sourceTree = "<group>";
@@ -247,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F734D1922B179A1200435866 /* DiagramListCellView.swift in Sources */,
-				F734D1942B179A1200435866 /* ExportButton.swift in Sources */,
 				F734D1912B179A1200435866 /* DiagramDisplayView.swift in Sources */,
 				F77BAF882B81206800A36C94 /* DateExtension.swift in Sources */,
 				F734D1992B179A1200435866 /* ApollonColor.swift in Sources */,
