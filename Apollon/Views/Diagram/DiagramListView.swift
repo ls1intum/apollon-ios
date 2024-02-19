@@ -58,22 +58,14 @@ struct DiagramListView: View {
 
                     Spacer()
                 } else {
-                    List {
-                        ForEach(diagrams) { diagram in
-                            ZStack {
-                                NavigationLink(destination: DiagramDisplayView(diagram: diagram)) {
-                                    EmptyView()
-                                }
-                                .opacity(0.0)
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+                            ForEach(diagrams) { diagram in
                                 DiagramListCellView(diagram: diagram)
                             }
-                            .listRowBackground(Color.clear)
-                            .listRowSeparator(.hidden)
                         }
-                        .onDelete(perform: deleteDiagram)
+                        .padding(10)
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    .listStyle(PlainListStyle())
                 }
             }
             .toolbar {

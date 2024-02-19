@@ -1,42 +1,42 @@
 import SwiftUI
 import ApollonShared
+import ApollonView
 
 struct DiagramListCellView: View {
     @State var diagram: ApollonDiagram
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            TextField("", text: bindingForDiagram(diagram))
+        VStack(alignment: .leading) {
+            ApollonView(umlModel: decodeModel(apollonDiagram: diagram),
+                        diagramType: decodeModel(apollonDiagram: diagram).type!,
+                        fontSize: 14.0,
+                        themeColor: Color.accentColor,
+                        diagramOffset: CGPoint(x: 0, y: 0),
+                        isGridBackground: false) {}
+                .frame(width: 150, height: 150)
+
+            Spacer()
+
+            NavigationLink(destination: DiagramDisplayView(diagram: diagram)) {
+                VStack(alignment: .leading) {
+                    Text(diagram.title)
+                        .font(.body)
+                        .bold()
+                        .foregroundColor(Color(UIColor.systemBackground))
+
+                    Text(diagram.diagramType.rawValue.insertSpaceBeforeCapitalLetters())
+                        .font(.subheadline)
+                        .foregroundColor(Color.accentColor)
+
+                    Text(formatDate(dateString: diagram.lastUpdate))
+                        .font(.footnote)
+                        .foregroundColor(Color.apollonToolbarItem)
+                }
                 .padding(5)
-                .background(.white)
-                .foregroundColor(.black)
-                .cornerRadius(3)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 3)
-                        .stroke(ApollonColor.toolBarBackground, lineWidth: 2)
-                )
-
-            Text("Last Update: \(formatDate(dateString: diagram.lastUpdate))")
-                .font(.caption)
-                .foregroundColor(.white)
-                .lineLimit(1)
-
-            HStack(spacing: 15) {
-                Text(diagram.diagramType.rawValue.insertSpaceBeforeCapitalLetters())
-                    .lineLimit(1)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(5)
-                    .background(.green)
-                    .cornerRadius(8)
-
-                Spacer()
-
-                ExportButton(diagram: diagram){}
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Color.apollonToolbar)
             }
         }
-        .padding(15)
-        .background(Color.accentColor)
         .cornerRadius(3)
         .overlay(
             RoundedRectangle(cornerRadius: 3)
@@ -58,9 +58,21 @@ struct DiagramListCellView: View {
         isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         if let isoDate = isoFormatter.date(from: dateString) {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM d, yyyy 'at' h:mm:ss a"
+            dateFormatter.dateFormat = "d.MM.yyyy, H:mm"
             return dateFormatter.string(from: isoDate)
         }
         return ""
+    }
+
+    private func decodeModel(apollonDiagram: ApollonDiagram) -> UMLModel {
+        var umlModel: UMLModel = UMLModel()
+        do {
+            if let modelData = apollonDiagram.model.data(using: .utf8) {
+                umlModel = try JSONDecoder().decode(UMLModel.self, from: modelData)
+            }
+        } catch {
+            print("Could not decode UML string: \(error)")
+        }
+        return umlModel
     }
 }

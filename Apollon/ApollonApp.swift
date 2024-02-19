@@ -3,7 +3,6 @@ import SwiftData
 
 @main
 struct ApollonApp: App {
-    @State private var removeDiagrams: Bool = UserDefaults.standard.bool(forKey: "remove_diagrams")
     @State private var darkMode: Bool = UserDefaults.standard.bool(forKey: "dark_mode")
 
     // The SwiftData model container for saving diagrams locally
@@ -19,15 +18,6 @@ struct ApollonApp: App {
     var body: some Scene {
         WindowGroup {
             DiagramListView()
-                .onAppear {
-                    NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { _ in
-                        removeDiagrams = UserDefaults.standard.bool(forKey: "remove_diagrams")
-                    }
-                    if removeDiagrams {
-                        sharedModelContainer.deleteAllData()
-                        UserDefaults.standard.set(false, forKey: "remove_diagrams")
-                    }
-                }
                 .onAppear {
                     NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { _ in
                         darkMode = UserDefaults.standard.bool(forKey: "dark_mode")

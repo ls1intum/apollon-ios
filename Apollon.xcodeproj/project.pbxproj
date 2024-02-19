@@ -44,6 +44,7 @@
 		F734D18F2B179A1200435866 /* ApollonDiagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApollonDiagram.swift; sourceTree = "<group>"; };
 		F77BAF872B81206800A36C94 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		F77BAF892B81222900A36C94 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		F795338D2B839ACB00962DBD /* apollon-ios-module */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "apollon-ios-module"; path = "../apollon-ios-module"; sourceTree = "<group>"; };
 		F7C91B0F2B2093AE009F065F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +65,7 @@
 		F734D1382B17980D00435866 = {
 			isa = PBXGroup;
 			children = (
+				F795338D2B839ACB00962DBD /* apollon-ios-module */,
 				F734D1432B17980D00435866 /* Apollon */,
 				F734D1422B17980D00435866 /* Products */,
 			);
