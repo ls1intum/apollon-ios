@@ -54,7 +54,6 @@ struct DiagramDisplayView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .toolbar(.hidden, for: .tabBar)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(ApollonColor.toolBarBackground, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
