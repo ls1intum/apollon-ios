@@ -33,9 +33,9 @@ struct DiagramListView: View {
                     Spacer()
                 } else {
                     ScrollView {
-                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                             ForEach(diagrams) { diagram in
-                                DiagramListCellView(viewModel: ApollonViewModel(diagram: diagram))
+                                DiagramListCellView(diagram: diagram)
                             }
                         }
                         .padding(10)
@@ -69,22 +69,18 @@ struct DiagramListView: View {
                             switch file {
                             case .success(let stringValue):
                                 let importedDiagram = try JSONDecoder().decode(Diagram.self, from: Data(stringValue.utf8))
-                                let jsonModelData = try JSONEncoder().encode(importedDiagram.model)
-                                if let jsonModelString = String(data: jsonModelData, encoding: .utf8) {
-                                    if let type = importedDiagram.model?.type, !UMLDiagramType.isDiagramTypeUnsupported(diagramType: type) {
-                                        let apollonDiagram = ApollonDiagram(id: importedDiagram.id, title: importedDiagram.title, lastUpdate: importedDiagram.lastUpdate, diagramType: type, model: jsonModelString)
-                                        if (diagrams.first(where: { $0.id == apollonDiagram.id}) == nil) {
-                                            modelContext.insert(apollonDiagram)
-                                        } else {
-                                            importErrorMessage = "A diagram with the same ID already exists."
-                                            print(importErrorMessage)
+                                if let type = importedDiagram.model?.type, !UMLDiagramType.isDiagramTypeUnsupported(diagramType: type) {
+                                    let diagram = ApollonDiagram(id: importedDiagram.id, title: importedDiagram.title, lastUpdate: importedDiagram.lastUpdate, diagramType: type, model: importedDiagram.model)
+                                    if (diagrams.first(where: { $0.id == diagram.id}) == nil) {
+                                        withAnimation {
+                                            modelContext.insert(diagram)
                                         }
                                     } else {
-                                        importErrorMessage = "This diagram type is not supported."
+                                        importErrorMessage = "A diagram with the same ID already exists."
                                         print(importErrorMessage)
                                     }
                                 } else {
-                                    importErrorMessage = "Could not import selected file. Are you sure it contains a diagram.json?"
+                                    importErrorMessage = "This diagram type is not supported."
                                     print(importErrorMessage)
                                 }
                             case .failure(let error):
@@ -92,7 +88,8 @@ struct DiagramListView: View {
                                 print(importErrorMessage)
                             }
                         } catch {
-                            print(error.localizedDescription)
+                            importErrorMessage = "Error whilst importing: \(error.localizedDescription)"
+                            print(importErrorMessage)
                         }
                     }
                 }
@@ -101,7 +98,9 @@ struct DiagramListView: View {
                         ForEach(UMLDiagramType.allCases, id: \.self) { type in
                             if !UMLDiagramType.isDiagramTypeUnsupported(diagramType: type) {
                                 Button(type.rawValue.insertSpaceBeforeCapitalLetters()) {
-                                    addDiagram(diagramType: type)
+                                    withAnimation {
+                                        modelContext.insert(ApollonDiagram(diagramType: type))
+                                    }
                                 }
                             }
                         }
@@ -114,20 +113,6 @@ struct DiagramListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(ApollonColor.toolBarBackground, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
-        }
-    }
-
-    private func addDiagram(diagramType: UMLDiagramType) {
-        withAnimation {
-            do {
-                let newModelData = try JSONEncoder().encode(UMLModel(type: diagramType))
-                if let jsonStringModel = String(data: newModelData, encoding: .utf8) {
-                    let newDiagram = ApollonDiagram(diagramType: diagramType, model: jsonStringModel)
-                    modelContext.insert(newDiagram)
-                }
-            } catch {
-                print("Could not parse UML string: \(error)")
-            }
         }
     }
 
@@ -173,6 +158,6 @@ struct ImportErrorMessageView: View {
                 .foregroundColor(Color.red.opacity(0.1))
         }
         .padding(.top, 10)
-        .padding(.horizontal, 15)
+        .padding(.horizontal, 10)
     }
 }
