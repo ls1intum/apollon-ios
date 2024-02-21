@@ -7,39 +7,13 @@ struct DiagramListView: View {
     @Query private var diagrams: [ApollonDiagram]
     @State private var isImporting = false
     @State private var shouldNavigate = false
-    @State private var errorMessage: String = ""
+    @State private var importErrorMessage: String = ""
 
     var body: some View {
         NavigationStack {
             VStack {
-                if errorMessage != "" {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text("Import failed")
-                                .foregroundColor(.red)
-                                .bold()
-                            Spacer()
-                            Button {
-                                errorMessage = ""
-                            } label: {
-                                Image(systemName: "x.circle")
-                                    .foregroundColor(.red)
-                            }
-                        }
-                        Text(errorMessage)
-                            .foregroundColor(.red)
-                    }
-                    .padding(5)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 3)
-                            .stroke(.red, lineWidth: 1)
-                    }
-                    .background {
-                        RoundedRectangle(cornerRadius: 3)
-                            .foregroundColor(Color.red.opacity(0.1))
-                    }
-                    .padding(.top, 10)
-                    .padding(.horizontal, 15)
+                if importErrorMessage != "" {
+                    ImportErrorMessageView(errorMessage: $importErrorMessage)
                 }
                 if diagrams.isEmpty {
                     Spacer()
@@ -58,22 +32,14 @@ struct DiagramListView: View {
 
                     Spacer()
                 } else {
-                    List {
-                        ForEach(diagrams) { diagram in
-                            ZStack {
-                                NavigationLink(destination: DiagramDisplayView(diagram: diagram)) {
-                                    EmptyView()
-                                }
-                                .opacity(0.0)
+                    ScrollView(.vertical, showsIndicators: false) {
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                            ForEach(diagrams) { diagram in
                                 DiagramListCellView(diagram: diagram)
                             }
-                            .listRowBackground(Color.clear)
-                            .listRowSeparator(.hidden)
                         }
-                        .onDelete(perform: deleteDiagram)
+                        .padding(10)
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    .listStyle(PlainListStyle())
                 }
             }
             .toolbar {
@@ -103,30 +69,27 @@ struct DiagramListView: View {
                             switch file {
                             case .success(let stringValue):
                                 let importedDiagram = try JSONDecoder().decode(Diagram.self, from: Data(stringValue.utf8))
-                                let jsonModelData = try JSONEncoder().encode(importedDiagram.model)
-                                if let jsonModelString = String(data: jsonModelData, encoding: .utf8) {
-                                    if let type = importedDiagram.model?.type, !UMLDiagramType.isDiagramTypeUnsupported(diagramType: type) {
-                                        let apollonDiagram = ApollonDiagram(id: importedDiagram.id, title: importedDiagram.title, lastUpdate: importedDiagram.lastUpdate, diagramType: type, model: jsonModelString)
-                                        if (diagrams.first(where: { $0.id == apollonDiagram.id}) == nil) {
-                                            modelContext.insert(apollonDiagram)
-                                        } else {
-                                            errorMessage = "A diagram with the same ID already exists."
-                                            print(errorMessage)
+                                if let type = importedDiagram.model?.type, !UMLDiagramType.isDiagramTypeUnsupported(diagramType: type) {
+                                    let diagram = ApollonDiagram(id: importedDiagram.id, title: importedDiagram.title, lastUpdate: importedDiagram.lastUpdate, diagramType: type, model: importedDiagram.model)
+                                    if (diagrams.first(where: { $0.id == diagram.id}) == nil) {
+                                        withAnimation {
+                                            modelContext.insert(diagram)
                                         }
                                     } else {
-                                        errorMessage = "This diagram type is not supported."
-                                        print(errorMessage)
+                                        importErrorMessage = "A diagram with the same ID already exists."
+                                        print(importErrorMessage)
                                     }
                                 } else {
-                                    errorMessage = "Could not import selected file. Are you sure it contains a diagram.json?"
-                                    print(errorMessage)
+                                    importErrorMessage = "This diagram type is not supported."
+                                    print(importErrorMessage)
                                 }
                             case .failure(let error):
-                                errorMessage = "Error whilst reading file: \(error)"
-                                print(errorMessage)
+                                importErrorMessage = "Error whilst reading file: \(error)"
+                                print(importErrorMessage)
                             }
                         } catch {
-                            print(error.localizedDescription)
+                            importErrorMessage = "Error whilst importing: \(error.localizedDescription)"
+                            print(importErrorMessage)
                         }
                     }
                 }
@@ -135,7 +98,9 @@ struct DiagramListView: View {
                         ForEach(UMLDiagramType.allCases, id: \.self) { type in
                             if !UMLDiagramType.isDiagramTypeUnsupported(diagramType: type) {
                                 Button(type.rawValue.insertSpaceBeforeCapitalLetters()) {
-                                    addDiagram(diagramType: type)
+                                    withAnimation {
+                                        modelContext.insert(ApollonDiagram(diagramType: type))
+                                    }
                                 }
                             }
                         }
@@ -151,28 +116,6 @@ struct DiagramListView: View {
         }
     }
 
-    private func addDiagram(diagramType: UMLDiagramType) {
-        withAnimation {
-            do {
-                let newModelData = try JSONEncoder().encode(UMLModel(type: diagramType))
-                if let jsonStringModel = String(data: newModelData, encoding: .utf8) {
-                    let newDiagram = ApollonDiagram(diagramType: diagramType, model: jsonStringModel)
-                    modelContext.insert(newDiagram)
-                }
-            } catch {
-                print("Could not parse UML string: \(error)")
-            }
-        }
-    }
-
-    private func deleteDiagram(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(diagrams[index])
-            }
-        }
-    }
-
     // Needed for importing
     private func read(from url: URL) -> Result<String,Error> {
         let accessing = url.startAccessingSecurityScopedResource()
@@ -182,5 +125,39 @@ struct DiagramListView: View {
             }
         }
         return Result { try String(contentsOf: url) }
+    }
+}
+
+struct ImportErrorMessageView: View {
+    @Binding var errorMessage: String
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text("Import failed")
+                    .foregroundColor(.red)
+                    .bold()
+                Spacer()
+                Button {
+                    errorMessage = ""
+                } label: {
+                    Image(systemName: "x.circle")
+                        .foregroundColor(.red)
+                }
+            }
+            Text(errorMessage)
+                .foregroundColor(.red)
+        }
+        .padding(5)
+        .overlay {
+            RoundedRectangle(cornerRadius: 3)
+                .stroke(.red, lineWidth: 1)
+        }
+        .background {
+            RoundedRectangle(cornerRadius: 3)
+                .foregroundColor(Color.red.opacity(0.1))
+        }
+        .padding(.top, 10)
+        .padding(.horizontal, 10)
     }
 }
