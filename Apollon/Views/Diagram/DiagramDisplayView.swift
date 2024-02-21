@@ -6,8 +6,11 @@ import ApollonEdit
 struct DiagramDisplayView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    @ObservedObject var viewModel: DiagramViewModel
     @State var diagram: ApollonDiagram
     @State private var isExporting = false
+    @State private var isRenaming = false
+    @State private var newRenamingName = ""
 
     var body: some View {
         ZStack {
@@ -21,6 +24,7 @@ struct DiagramDisplayView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
+                    diagram.lastUpdate = Date().ISO8601FormatWithFractionalSeconds()
                     dismiss()
                 } label: {
                     HStack {
@@ -36,16 +40,44 @@ struct DiagramDisplayView: View {
                     .bold()
                     .foregroundColor(Color(UIColor.systemBackground))
             }
-            //            ToolbarItem(placement: .navigationBarTrailing) {
-            //                Button {
-            //                    viewModel.renderExport()
-            //                    self.isExporting = true
-            //                } label: {
-            //                    Image(systemName: "square.and.arrow.up")
-            //                        .foregroundColor(ApollonColor.toolBarItemColor)
-            //                }
-            //                .exportDiagram(viewModel: viewModel, isExporting: $isExporting)
-            //            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Menu {
+                    Button {
+                        newRenamingName = diagram.title
+                        isRenaming = true
+                    } label: {
+                        Label("Rename", systemImage: "pencil")
+                    }
+                    Button {
+                        viewModel.renderExport()
+                        self.isExporting = true
+                    } label: {
+                        Label("Export", systemImage: "square.and.arrow.up")
+                    }
+                    Button(role: .destructive) {
+                        withAnimation {
+                            dismiss()
+                            modelContext.delete(diagram)
+                        }
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                }
+                .foregroundColor(ApollonColor.toolBarItemColor)
+                .alert("Rename Diagram", isPresented: $isRenaming) {
+                    TextField("Diagram Name", text: $newRenamingName)
+                        .foregroundColor(Color(UIColor.systemBackground))
+                    Button("Cancel", role: .cancel) {}
+                    Button("OK") {
+                        diagram.title = newRenamingName
+                    }
+                } message: {
+                    Text("Enter a new name for your diagram.")
+                }
+                .exportDiagram(viewModel: viewModel, isExporting: $isExporting)
+            }
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)

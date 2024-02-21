@@ -32,7 +32,7 @@ struct DiagramListView: View {
 
                     Spacer()
                 } else {
-                    ScrollView {
+                    ScrollView(.vertical, showsIndicators: false) {
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                             ForEach(diagrams) { diagram in
                                 DiagramListCellView(diagram: diagram)
