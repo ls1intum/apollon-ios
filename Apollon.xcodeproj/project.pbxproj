@@ -26,7 +26,20 @@
 		F79533922B8493AC00962DBD /* ExportDiagramModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79533912B8493AC00962DBD /* ExportDiagramModifier.swift */; };
 		F79533942B84958500962DBD /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79533932B84958500962DBD /* ViewExtension.swift */; };
 		F7C91B102B2093AE009F065F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C91B0F2B2093AE009F065F /* LaunchScreen.storyboard */; };
+		F7DEC4632B88FB70009677FE /* ApollonSnapshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC4622B88FB70009677FE /* ApollonSnapshotUITests.swift */; };
+		F7DEC4652B88FB70009677FE /* ApollonSnapshotUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC4642B88FB70009677FE /* ApollonSnapshotUITestsLaunchTests.swift */; };
+		F7DEC46C2B88FB92009677FE /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC46B2B88FB92009677FE /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7DEC4662B88FB70009677FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F734D1392B17980D00435866 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F734D1402B17980D00435866;
+			remoteInfo = Apollon;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		06FAB0C42B347540004B02DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +60,10 @@
 		F79533912B8493AC00962DBD /* ExportDiagramModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportDiagramModifier.swift; sourceTree = "<group>"; };
 		F79533932B84958500962DBD /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		F7C91B0F2B2093AE009F065F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7DEC4602B88FB70009677FE /* ApollonSnapshotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApollonSnapshotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7DEC4622B88FB70009677FE /* ApollonSnapshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApollonSnapshotUITests.swift; sourceTree = "<group>"; };
+		F7DEC4642B88FB70009677FE /* ApollonSnapshotUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApollonSnapshotUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F7DEC46B2B88FB92009677FE /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +77,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F7DEC45D2B88FB70009677FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				F734D1432B17980D00435866 /* Apollon */,
+				F7DEC4612B88FB70009677FE /* ApollonSnapshotUITests */,
 				F734D1422B17980D00435866 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				F734D1412B17980D00435866 /* Apollon.app */,
+				F7DEC4602B88FB70009677FE /* ApollonSnapshotUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,6 +201,16 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
+		F7DEC4612B88FB70009677FE /* ApollonSnapshotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F7DEC46B2B88FB92009677FE /* SnapshotHelper.swift */,
+				F7DEC4622B88FB70009677FE /* ApollonSnapshotUITests.swift */,
+				F7DEC4642B88FB70009677FE /* ApollonSnapshotUITestsLaunchTests.swift */,
+			);
+			path = ApollonSnapshotUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,6 +236,24 @@
 			productReference = F734D1412B17980D00435866 /* Apollon.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F7DEC45F2B88FB70009677FE /* ApollonSnapshotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7DEC4682B88FB70009677FE /* Build configuration list for PBXNativeTarget "ApollonSnapshotUITests" */;
+			buildPhases = (
+				F7DEC45C2B88FB70009677FE /* Sources */,
+				F7DEC45D2B88FB70009677FE /* Frameworks */,
+				F7DEC45E2B88FB70009677FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7DEC4672B88FB70009677FE /* PBXTargetDependency */,
+			);
+			name = ApollonSnapshotUITests;
+			productName = ApollonSnapshotUITests;
+			productReference = F7DEC4602B88FB70009677FE /* ApollonSnapshotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,11 +261,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					F734D1402B17980D00435866 = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					F7DEC45F2B88FB70009677FE = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = F734D1402B17980D00435866;
 					};
 				};
 			};
@@ -232,6 +290,7 @@
 			projectRoot = "";
 			targets = (
 				F734D1402B17980D00435866 /* Apollon */,
+				F7DEC45F2B88FB70009677FE /* ApollonSnapshotUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,6 +304,13 @@
 				F7C91B102B2093AE009F065F /* LaunchScreen.storyboard in Resources */,
 				F734D17D2B17996500435866 /* Preview Assets.xcassets in Resources */,
 				F734D17C2B17996500435866 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7DEC45E2B88FB70009677FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +336,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F7DEC45C2B88FB70009677FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7DEC4652B88FB70009677FE /* ApollonSnapshotUITestsLaunchTests.swift in Sources */,
+				F7DEC4632B88FB70009677FE /* ApollonSnapshotUITests.swift in Sources */,
+				F7DEC46C2B88FB92009677FE /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7DEC4672B88FB70009677FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F734D1402B17980D00435866 /* Apollon */;
+			targetProxy = F7DEC4662B88FB70009677FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F734D1652B17980E00435866 /* Debug */ = {
@@ -401,7 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "Apollon/Common/Preview\\ Content";
-				DEVELOPMENT_TEAM = YBNH3HWUY2;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Apollon/Common/Info.plist;
@@ -437,7 +521,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "Apollon/Common/Preview\\ Content";
-				DEVELOPMENT_TEAM = YBNH3HWUY2;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Apollon/Common/Info.plist;
@@ -464,6 +548,40 @@
 			};
 			name = Release;
 		};
+		F7DEC4692B88FB70009677FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.tum.cit.ase.apollon.ApollonSnapshotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Apollon;
+			};
+			name = Debug;
+		};
+		F7DEC46A2B88FB70009677FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.tum.cit.ase.apollon.ApollonSnapshotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Apollon;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -481,6 +599,15 @@
 			buildConfigurations = (
 				F734D1682B17980E00435866 /* Debug */,
 				F734D1692B17980E00435866 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7DEC4682B88FB70009677FE /* Build configuration list for PBXNativeTarget "ApollonSnapshotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7DEC4692B88FB70009677FE /* Debug */,
+				F7DEC46A2B88FB70009677FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
