@@ -34,7 +34,7 @@
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>DefaultValue</key>
-			<string>apollon.ase.in.tum.de</string>
+			<string>apollon.ase.cit.tum.de</string>
 			<key>Title</key>
 			<string>ApollonWeb</string>
 			<key>Key</key>
