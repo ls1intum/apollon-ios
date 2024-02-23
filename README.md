@@ -16,7 +16,7 @@ The user interface of Apollon iOS is simple to use.
 <img src="/docs/Apollon-iOS-Demo.gif" alt="Apollon iOS features" width="300"/>
 
 ### Import and Export
-Apollon iOS allows importing JSON files for diagrams created on [Apollon Standalone](https://apollon.ase.in.tum.de).
+Apollon iOS allows importing JSON files for diagrams created on [Apollon Standalone](https://apollon.ase.cit.tum.de).
 Diagrams created and edited on the Apollon iOS application can also be exported to JSON, allowing diagrams to be used between both applications.
 
 ### UML diagrams
