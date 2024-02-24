@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import ApollonShared
 
 @main
 struct ApollonApp: App {
@@ -21,6 +22,20 @@ struct ApollonApp: App {
                 }
                 .preferredColorScheme(darkMode ? .dark : .light)
         }
-        .modelContainer(for: ApollonDiagram.self, isAutosaveEnabled: true)
+        .modelContainer(checkIfMockingDiagrams())
+    }
+
+    func checkIfMockingDiagrams() -> ModelContainer {
+        if CommandLine.arguments.contains("-Screenshots") {
+            let mockConfig = ModelConfiguration(isStoredInMemoryOnly: true)
+            let mockContainer = try! ModelContainer(for: ApollonDiagram.self, configurations: mockConfig)
+            ModelContext(mockContainer).insert(ApollonDiagram(title: "Spaceship Class", diagramType: .classDiagram, model: UMLModel(type: .classDiagram)))
+            ModelContext(mockContainer).insert(ApollonDiagram(title: "Student Cases", diagramType: .useCaseDiagram, model: UMLModel(type: .useCaseDiagram)))
+            ModelContext(mockContainer).insert(ApollonDiagram(title: "System Architecture", diagramType: .componentDiagram, model: UMLModel(type: .componentDiagram)))
+            return mockContainer
+        } else {
+            let container = try! ModelContainer(for: ApollonDiagram.self)
+            return container
+        }
     }
 }

@@ -27,7 +27,6 @@
 		F79533942B84958500962DBD /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79533932B84958500962DBD /* ViewExtension.swift */; };
 		F7C91B102B2093AE009F065F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C91B0F2B2093AE009F065F /* LaunchScreen.storyboard */; };
 		F7DEC4632B88FB70009677FE /* ApollonSnapshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC4622B88FB70009677FE /* ApollonSnapshotUITests.swift */; };
-		F7DEC4652B88FB70009677FE /* ApollonSnapshotUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC4642B88FB70009677FE /* ApollonSnapshotUITestsLaunchTests.swift */; };
 		F7DEC46C2B88FB92009677FE /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC46B2B88FB92009677FE /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +61,6 @@
 		F7C91B0F2B2093AE009F065F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7DEC4602B88FB70009677FE /* ApollonSnapshotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApollonSnapshotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DEC4622B88FB70009677FE /* ApollonSnapshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApollonSnapshotUITests.swift; sourceTree = "<group>"; };
-		F7DEC4642B88FB70009677FE /* ApollonSnapshotUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApollonSnapshotUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F7DEC46B2B88FB92009677FE /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,7 +204,6 @@
 			children = (
 				F7DEC46B2B88FB92009677FE /* SnapshotHelper.swift */,
 				F7DEC4622B88FB70009677FE /* ApollonSnapshotUITests.swift */,
-				F7DEC4642B88FB70009677FE /* ApollonSnapshotUITestsLaunchTests.swift */,
 			);
 			path = ApollonSnapshotUITests;
 			sourceTree = "<group>";
@@ -340,7 +337,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7DEC4652B88FB70009677FE /* ApollonSnapshotUITestsLaunchTests.swift in Sources */,
 				F7DEC4632B88FB70009677FE /* ApollonSnapshotUITests.swift in Sources */,
 				F7DEC46C2B88FB92009677FE /* SnapshotHelper.swift in Sources */,
 			);

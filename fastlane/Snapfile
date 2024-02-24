@@ -1,10 +1,10 @@
 # For more information about all available options run fastlane action snapshot
 
 devices([
-  "iPhone 14",
-  "iPhone 15",
-  "iPad (10th generation)",
-  "iPad Pro (12.9-inch) (6th generation)",
+   "iPhone 14",
+   "iPhone 15",
+   "iPad (10th generation)",
+   "iPad Pro (12.9-inch) (6th generation)",
 ])
 
 languages([
