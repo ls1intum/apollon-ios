@@ -2,7 +2,15 @@
 *.xcscmblueprint
 *.xccheckout
 *.xcuserstate
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
 *.xcscheme
-xcuserdata
+*.moved-aside
+xcuserdata/
 fastlane/report.xml
 screenshots/
