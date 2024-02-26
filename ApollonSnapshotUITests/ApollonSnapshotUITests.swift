@@ -12,9 +12,10 @@ class ApollonSnapshotUITests: XCTestCase {
         app.launch()
     }
 
-    func testTakeScreenshots() {
+    func testTakePortraitScreenshots() {
+        XCUIDevice.shared.orientation = .portrait
         // Snapshot 1
-        snapshot("01-DiagramListView")
+        snapshot("DiagramListViewPortrait")
 
         // Tap Diagram
         app.buttons["DiagramNavigationButton_1"].tap()
@@ -26,7 +27,7 @@ class ApollonSnapshotUITests: XCTestCase {
         app.buttons["AddElementButton"].tap()
 
         // Snapshot 2
-        snapshot("02-DiagramDisplayView")
+        snapshot("DiagramDisplayViewPortrait")
 
         // Tap Add Element Button to close Menu
         app.buttons["AddElementButton"].forceTapElement()
@@ -38,16 +39,37 @@ class ApollonSnapshotUITests: XCTestCase {
         app.buttons["DiagramExportButton"].forceTapElement()
 
         // Snapshot 3
-        snapshot("03-DiagramExportButton")
+        snapshot("DiagramExportButtonPortrait")
+    }
 
-        // Tap PNG Export
-        app.buttons["DiagramExportPNG"].tap()
+    func testTakeLandscapeScreenshots() {
+        XCUIDevice.shared.orientation = .landscapeRight
+        // Snapshot 1
+        snapshot("DiagramListViewLandscape")
+
+        // Tap Diagram
+        app.buttons["DiagramNavigationButton_1"].tap()
 
         // Sleep
-        sleep(8)
+        sleep(3)
 
-        // Snapshot 4
-        snapshot("04-DiagramShareButton")
+        // Tap Add Element Button
+        app.buttons["AddElementButton"].tap()
+
+        // Snapshot 2
+        snapshot("DiagramDisplayViewLandscape")
+
+        // Tap Add Element Button to close Menu
+        app.buttons["AddElementButton"].forceTapElement()
+
+        // Tap Diagram Menu
+        app.buttons["DiagramMenuButton"].forceTapElement()
+
+        // Tap Export Diagram Button
+        app.buttons["DiagramExportButton"].forceTapElement()
+
+        // Snapshot 3
+        snapshot("DiagramExportButtonLandscape")
     }
 }
 

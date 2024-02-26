@@ -20,7 +20,6 @@ platform :ios do
   desc "Generate new screenshots"
   lane :screenshots do
    capture_screenshots
-   frame_screenshots
   end
 
   desc "[CI] Check static code quality"

@@ -1,5 +1,8 @@
-.DS_Store
-xcuserdata/
+*.DS_Store
 *.xcscmblueprint
 *.xccheckout
 *.xcuserstate
+*.xcscheme
+xcuserdata
+fastlane/report.xml
+screenshots/
