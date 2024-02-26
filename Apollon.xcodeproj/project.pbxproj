@@ -28,6 +28,7 @@
 		F7C91B102B2093AE009F065F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C91B0F2B2093AE009F065F /* LaunchScreen.storyboard */; };
 		F7DEC4632B88FB70009677FE /* ApollonSnapshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC4622B88FB70009677FE /* ApollonSnapshotUITests.swift */; };
 		F7DEC46C2B88FB92009677FE /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC46B2B88FB92009677FE /* SnapshotHelper.swift */; };
+		F7DEC46F2B8BBD1B009677FE /* MockDiagrams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC46E2B8BBD1B009677FE /* MockDiagrams.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		F7DEC4602B88FB70009677FE /* ApollonSnapshotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApollonSnapshotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DEC4622B88FB70009677FE /* ApollonSnapshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApollonSnapshotUITests.swift; sourceTree = "<group>"; };
 		F7DEC46B2B88FB92009677FE /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		F7DEC46D2B8BA3DE009677FE /* apollon-ios-module */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "apollon-ios-module"; path = "../apollon-ios-module"; sourceTree = "<group>"; };
+		F7DEC46E2B8BBD1B009677FE /* MockDiagrams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDiagrams.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,7 @@
 		F734D1382B17980D00435866 = {
 			isa = PBXGroup;
 			children = (
+				F7DEC46D2B8BA3DE009677FE /* apollon-ios-module */,
 				F734D1432B17980D00435866 /* Apollon */,
 				F7DEC4612B88FB70009677FE /* ApollonSnapshotUITests */,
 				F734D1422B17980D00435866 /* Products */,
@@ -179,6 +183,7 @@
 				F734D1892B179A1200435866 /* Extensions */,
 				F734D18C2B179A1200435866 /* JSONFile.swift */,
 				F734D18D2B179A1200435866 /* ApollonColor.swift */,
+				F7DEC46E2B8BBD1B009677FE /* MockDiagrams.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				F734D1962B179A1200435866 /* DiagramViewModel.swift in Sources */,
 				F734D1972B179A1200435866 /* StringExtension.swift in Sources */,
 				F734D1452B17980D00435866 /* ApollonApp.swift in Sources */,
+				F7DEC46F2B8BBD1B009677FE /* MockDiagrams.swift in Sources */,
 				F734D1982B179A1200435866 /* JSONFile.swift in Sources */,
 				F79533922B8493AC00962DBD /* ExportDiagramModifier.swift in Sources */,
 			);

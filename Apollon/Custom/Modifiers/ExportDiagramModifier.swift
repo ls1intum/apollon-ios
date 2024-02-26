@@ -18,6 +18,7 @@ struct ExportDiagramModifier: ViewModifier {
                               preview: SharePreview(viewModel.diagram.title, image: Image(uiImage: pngImage))) {
                         Text("PNG")
                     }
+                              .accessibilityIdentifier("DiagramExportPNG")
                 }
                 if let pdfFile = viewModel.pdfFile {
                     ShareLink(item: pdfFile) {

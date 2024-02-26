@@ -1,10 +1,8 @@
 # For more information about all available options run fastlane action snapshot
 
 devices([
-   "iPhone 14",
-   "iPhone 15",
-   "iPad (10th generation)",
-   "iPad Pro (12.9-inch) (6th generation)",
+   "iPhone 13 Pro Max",
+   "iPad Pro (12.9-inch) (6th generation)"
 ])
 
 languages([
@@ -18,6 +16,3 @@ output_directory("./screenshots")
 clear_previous_screenshots(true)
 
 override_status_bar(true)
-
-#launch-arguments
-# launch_arguments(["-favColor red"])

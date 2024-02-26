@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "apollon-ios-module",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ls1intum/apollon-ios-module",
-      "state" : {
-        "revision" : "c3f5a1201c4d2fa533a7c95eee43ff891c586061",
-        "version" : "1.0.5"
-      }
-    },
-    {
       "identity" : "swiftybeaver",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SwiftyBeaver/SwiftyBeaver.git",

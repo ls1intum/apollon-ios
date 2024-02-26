@@ -29,9 +29,16 @@ struct ApollonApp: App {
         if CommandLine.arguments.contains("-Screenshots") {
             let mockConfig = ModelConfiguration(isStoredInMemoryOnly: true)
             let mockContainer = try! ModelContainer(for: ApollonDiagram.self, configurations: mockConfig)
-            ModelContext(mockContainer).insert(ApollonDiagram(title: "Spaceship Class", diagramType: .classDiagram, model: UMLModel(type: .classDiagram)))
-            ModelContext(mockContainer).insert(ApollonDiagram(title: "Student Cases", diagramType: .useCaseDiagram, model: UMLModel(type: .useCaseDiagram)))
-            ModelContext(mockContainer).insert(ApollonDiagram(title: "System Architecture", diagramType: .componentDiagram, model: UMLModel(type: .componentDiagram)))
+            do {
+                let classDiagram = try JSONDecoder().decode(Diagram.self, from: Data(MockDiagrams.classDiagramMockJSON.utf8))
+                ModelContext(mockContainer).insert(ApollonDiagram(id: "1", title: "Spaceship Diagram", lastUpdate: classDiagram.lastUpdate, diagramType: .classDiagram, model: classDiagram.model))
+                let useCaseDiagram = try JSONDecoder().decode(Diagram.self, from: Data(MockDiagrams.useCaseDiagramMockJSON.utf8))
+                ModelContext(mockContainer).insert(ApollonDiagram(id: "2", title: "Students", lastUpdate: useCaseDiagram.lastUpdate, diagramType: .useCaseDiagram, model: useCaseDiagram.model))
+                let componentDiagram = try JSONDecoder().decode(Diagram.self, from: Data(MockDiagrams.componentDiagramMockJSON.utf8))
+                ModelContext(mockContainer).insert(ApollonDiagram(id: "3", title: "System Architecture", lastUpdate: componentDiagram.lastUpdate, diagramType: .componentDiagram, model: componentDiagram.model))
+            } catch {
+                print("Error decoding JSON: \(error)")
+            }
             return mockContainer
         } else {
             let container = try! ModelContainer(for: ApollonDiagram.self)

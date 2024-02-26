@@ -54,6 +54,7 @@ struct DiagramDisplayView: View {
                     } label: {
                         Label("Export", systemImage: "square.and.arrow.up")
                     }
+                    .accessibilityIdentifier("DiagramExportButton")
                     Button(role: .destructive) {
                         withAnimation {
                             dismiss()
@@ -65,6 +66,7 @@ struct DiagramDisplayView: View {
                 } label: {
                     Image(systemName: "ellipsis.circle")
                 }
+                .accessibilityIdentifier("DiagramMenuButton")
                 .foregroundColor(ApollonColor.toolBarItemColor)
                 .alert("Rename Diagram", isPresented: $isRenaming) {
                     TextField("Diagram Name", text: $newRenamingName)
