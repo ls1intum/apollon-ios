@@ -47,6 +47,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F734D1402B17980D00435866"
+            BuildableName = "Apollon.app"
+            BlueprintName = "Apollon"
+            ReferencedContainer = "container:Apollon.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -54,15 +64,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F7DEC45F2B88FB70009677FE"
-            BuildableName = "ApollonSnapshotUITests.xctest"
-            BlueprintName = "ApollonSnapshotUITests"
-            ReferencedContainer = "container:Apollon.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

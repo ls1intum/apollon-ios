@@ -63,7 +63,6 @@
 		F7DEC4602B88FB70009677FE /* ApollonSnapshotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApollonSnapshotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7DEC4622B88FB70009677FE /* ApollonSnapshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApollonSnapshotUITests.swift; sourceTree = "<group>"; };
 		F7DEC46B2B88FB92009677FE /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		F7DEC46D2B8BA3DE009677FE /* apollon-ios-module */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "apollon-ios-module"; path = "../apollon-ios-module"; sourceTree = "<group>"; };
 		F7DEC46E2B8BBD1B009677FE /* MockDiagrams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDiagrams.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +90,6 @@
 		F734D1382B17980D00435866 = {
 			isa = PBXGroup;
 			children = (
-				F7DEC46D2B8BA3DE009677FE /* apollon-ios-module */,
 				F734D1432B17980D00435866 /* Apollon */,
 				F7DEC4612B88FB70009677FE /* ApollonSnapshotUITests */,
 				F734D1422B17980D00435866 /* Products */,

@@ -31,7 +31,7 @@ struct ApollonApp: App {
             let mockContainer = try! ModelContainer(for: ApollonDiagram.self, configurations: mockConfig)
             do {
                 let classDiagram = try JSONDecoder().decode(Diagram.self, from: Data(MockDiagrams.classDiagramMockJSON.utf8))
-                ModelContext(mockContainer).insert(ApollonDiagram(id: "1", title: "Spaceship Diagram", lastUpdate: classDiagram.lastUpdate, diagramType: .classDiagram, model: classDiagram.model))
+                ModelContext(mockContainer).insert(ApollonDiagram(id: "1", title: "Animals", lastUpdate: classDiagram.lastUpdate, diagramType: .classDiagram, model: classDiagram.model))
                 let useCaseDiagram = try JSONDecoder().decode(Diagram.self, from: Data(MockDiagrams.useCaseDiagramMockJSON.utf8))
                 ModelContext(mockContainer).insert(ApollonDiagram(id: "2", title: "Students", lastUpdate: useCaseDiagram.lastUpdate, diagramType: .useCaseDiagram, model: useCaseDiagram.model))
                 let componentDiagram = try JSONDecoder().decode(Diagram.self, from: Data(MockDiagrams.componentDiagramMockJSON.utf8))

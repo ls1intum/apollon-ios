@@ -9,66 +9,131 @@ class ApollonSnapshotUITests: XCTestCase {
         app = XCUIApplication()
         setupSnapshot(app)
         app.launchArguments += ["-Screenshots"]
-        app.launch()
     }
 
-    func testTakePortraitScreenshots() {
+    func testTakeDarkModePortraitScreenshots() {
+        app.launchArguments += ["-dark_mode", "YES"]
         XCUIDevice.shared.orientation = .portrait
-        // Snapshot 1
-        snapshot("DiagramListViewPortrait")
+        app.launch()
 
         // Tap Diagram
         app.buttons["DiagramNavigationButton_1"].tap()
 
         // Sleep
-        sleep(3)
+        sleep(2)
 
-        // Tap Add Element Button
+        // Snapshot
+        snapshot("DiagramDisplayViewPortraitDarkMode")
+    }
+
+    func testTakeDarkModeLandscapeScreenshots() {
+        app.launchArguments += ["-dark_mode", "YES"]
+        XCUIDevice.shared.orientation = .landscapeRight
+        app.launch()
+
+        // Tap Diagram
+        app.buttons["DiagramNavigationButton_1"].tap()
+
+        // Sleep
+        sleep(2)
+
+        // Snapshot
+        snapshot("DiagramDisplayViewLandscapeDarkMode")
+    }
+
+    func testTakePortraitScreenshots() {
+        app.launchArguments += ["-dark_mode", "NO"]
+        XCUIDevice.shared.orientation = .portrait
+        app.launch()
+
+        // Snapshot
+        snapshot("DiagramListViewPortrait")
+
+        // Tap diagram
+        app.buttons["DiagramNavigationButton_1"].tap()
+
+        // Sleep
+        sleep(2)
+
+        // Tap random location on screen to select element
+        app.images["UMLGridBackground"].tap()
+
+        // Snapshot
+        snapshot("SelectElementViewPortrait")
+
+        // Tap edit element button to open edit sheet
+        app.buttons["EditElementButton"].tap()
+
+        // Snapshot
+        snapshot("EditElementViewPortrait")
+
+        // Close element edit sheet
+        app.buttons["Done"].tap()
+
+        // Tap add element button
         app.buttons["AddElementButton"].tap()
-
-        // Snapshot 2
+        
+        // Snapshot
         snapshot("DiagramDisplayViewPortrait")
 
-        // Tap Add Element Button to close Menu
+        // Tap add element button to close menu
         app.buttons["AddElementButton"].forceTapElement()
 
-        // Tap Diagram Menu
+        // Tap diagram menu
         app.buttons["DiagramMenuButton"].forceTapElement()
 
-        // Tap Export Diagram Button
+        // Tap export diagram button
         app.buttons["DiagramExportButton"].forceTapElement()
 
-        // Snapshot 3
+        // Snapshot
         snapshot("DiagramExportButtonPortrait")
     }
 
     func testTakeLandscapeScreenshots() {
+        app.launchArguments += ["-dark_mode", "NO"]
         XCUIDevice.shared.orientation = .landscapeRight
-        // Snapshot 1
+        app.launch()
+
+        // Snapshot
         snapshot("DiagramListViewLandscape")
 
-        // Tap Diagram
+        // Tap diagram
         app.buttons["DiagramNavigationButton_1"].tap()
 
         // Sleep
         sleep(3)
 
-        // Tap Add Element Button
+        // Tap random location on screen to select element
+        app.images["UMLGridBackground"].tap()
+
+        // Snapshot
+        snapshot("SelectElementViewLandscape")
+
+        // Tap edit element button to open edit sheet
+        app.buttons["EditElementButton"].tap()
+
+        // Snapshot
+        snapshot("EditElementViewLandscape")
+
+        // Close element edit sheet
+        app.buttons["Done"].tap()
+
+        // Tap add element button
         app.buttons["AddElementButton"].tap()
 
-        // Snapshot 2
+        // Snapshot
         snapshot("DiagramDisplayViewLandscape")
 
-        // Tap Add Element Button to close Menu
+        // Tap add element button to close menu
         app.buttons["AddElementButton"].forceTapElement()
 
-        // Tap Diagram Menu
+        // Tap diagram menu
         app.buttons["DiagramMenuButton"].forceTapElement()
 
-        // Tap Export Diagram Button
+        // Tap export diagram button
         app.buttons["DiagramExportButton"].forceTapElement()
 
-        // Snapshot 3
+        // Snapshot
         snapshot("DiagramExportButtonLandscape")
     }
 }

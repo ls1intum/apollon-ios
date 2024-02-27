@@ -2,144 +2,132 @@ struct MockDiagrams {
     static let classDiagramMockJSON =
     """
     {
-        "id":"01deff0c-3f92-44ef-adef-7866d49e31d3","title":"ClassDiagram","model":{
+        "id":"eca25504-1bde-41c3-933d-2f97f5f3b98d","title":"Animals","lastUpdate":"2024-02-27T15:27:32.407Z","diagramType":"ClassDiagram","model":{
             "version":"3.0.0","type":"ClassDiagram","size":{
-                "width":1340,"height":860
+                "width":700,"height":700
             },"interactive":{
                 "elements":{
                 },"relationships":{
                 }
             },"elements":{
-                "054b674b-b2f2-4979-8566-971c056f9046":{
-                    "id":"054b674b-b2f2-4979-8566-971c056f9046","name":"Package","type":"Package","owner":null,"bounds":{
-                        "x":0,"y":0,"width":700,"height":560
+                "715bd47f-0341-4a24-9a6b-547c1bbe40a6":{
+                    "id":"715bd47f-0341-4a24-9a6b-547c1bbe40a6","name":"Animal","type":"Interface","owner":null,"bounds":{
+                        "x":250,"y":0,"width":200,"height":190
+                    },"attributes":["0e5d7fcb-da3c-4fa6-9f04-c6567bb0a652","8bac3e98-9e48-4e3b-b0fa-b787073997b1"],"methods":["498ed338-700a-4300-ad99-6e7cdc40b194","3078572f-3f75-44b5-b8d8-7e8d63d22b86"]
+                },"0e5d7fcb-da3c-4fa6-9f04-c6567bb0a652":{
+                    "id":"0e5d7fcb-da3c-4fa6-9f04-c6567bb0a652","name":"+ age: Int","type":"ClassAttribute","owner":"715bd47f-0341-4a24-9a6b-547c1bbe40a6","bounds":{
+                        "x":250.5,"y":50.5,"width":199,"height":40
                     }
-                },"7f1e0d73-65af-4223-a4d4-8788063c4f60":{
-                    "id":"7f1e0d73-65af-4223-a4d4-8788063c4f60","name":"Person","type":"Interface","owner":"054b674b-b2f2-4979-8566-971c056f9046","bounds":{
-                        "x":270,"y":50,"width":200,"height":190
-                    },"attributes":["9593354b-c285-47f8-916e-b39eee6a2702","8b88592f-d5f3-41cf-92e4-0d624706d532"],"methods":["8dd03826-8742-46dd-951d-29d2e5d13367","b19a4c0c-89b3-43e2-88b9-9c035fa28b59"]
-                },"9593354b-c285-47f8-916e-b39eee6a2702":{
-                    "id":"9593354b-c285-47f8-916e-b39eee6a2702","name":"+ test: Test","type":"ClassAttribute","owner":"7f1e0d73-65af-4223-a4d4-8788063c4f60","bounds":{
-                        "x":270.5,"y":100.5,"width":199,"height":40
+                },"8bac3e98-9e48-4e3b-b0fa-b787073997b1":{
+                    "id":"8bac3e98-9e48-4e3b-b0fa-b787073997b1","name":"+ gender: String","type":"ClassAttribute","owner":"715bd47f-0341-4a24-9a6b-547c1bbe40a6","bounds":{
+                        "x":250.5,"y":90.5,"width":199,"height":30
                     }
-                },"8b88592f-d5f3-41cf-92e4-0d624706d532":{
-                    "id":"8b88592f-d5f3-41cf-92e4-0d624706d532","name":"+ hello","type":"ClassAttribute","owner":"7f1e0d73-65af-4223-a4d4-8788063c4f60","bounds":{
-                        "x":270.5,"y":140.5,"width":199,"height":30
+                },"498ed338-700a-4300-ad99-6e7cdc40b194":{
+                    "id":"498ed338-700a-4300-ad99-6e7cdc40b194","name":"+ isMammal()","type":"ClassMethod","owner":"715bd47f-0341-4a24-9a6b-547c1bbe40a6","bounds":{
+                        "x":250.5,"y":120.5,"width":199,"height":40
                     }
-                },"8dd03826-8742-46dd-951d-29d2e5d13367":{
-                    "id":"8dd03826-8742-46dd-951d-29d2e5d13367","name":"+ methosa()","type":"ClassMethod","owner":"7f1e0d73-65af-4223-a4d4-8788063c4f60","bounds":{
-                        "x":270.5,"y":170.5,"width":199,"height":40
+                },"3078572f-3f75-44b5-b8d8-7e8d63d22b86":{
+                    "id":"3078572f-3f75-44b5-b8d8-7e8d63d22b86","name":"+ eat()","type":"ClassMethod","owner":"715bd47f-0341-4a24-9a6b-547c1bbe40a6","bounds":{
+                        "x":250.5,"y":160.5,"width":199,"height":30
                     }
-                },"b19a4c0c-89b3-43e2-88b9-9c035fa28b59":{
-                    "id":"b19a4c0c-89b3-43e2-88b9-9c035fa28b59","name":"- adfdf()","type":"ClassMethod","owner":"7f1e0d73-65af-4223-a4d4-8788063c4f60","bounds":{
-                        "x":270.5,"y":210.5,"width":199,"height":30
+                },"9ad7a1a1-af25-42c4-8d65-714a8de5472a":{
+                    "id":"9ad7a1a1-af25-42c4-8d65-714a8de5472a","name":"Duck","type":"Class","owner":null,"bounds":{
+                        "x":0,"y":290,"width":200,"height":150
+                    },"attributes":["c7ed9ea4-28bc-4baf-9b84-04ae49e37f30"],"methods":["6dfa6478-439f-4d79-bff6-a8e237d494ff","3ab9c586-6ba6-4b0b-b8d0-ff16e4cb3808"]
+                },"c7ed9ea4-28bc-4baf-9b84-04ae49e37f30":{
+                    "id":"c7ed9ea4-28bc-4baf-9b84-04ae49e37f30","name":"+ beakColor: String","type":"ClassAttribute","owner":"9ad7a1a1-af25-42c4-8d65-714a8de5472a","bounds":{
+                        "x":0.5,"y":330.5,"width":199,"height":40
                     }
-                },"a7d8a9d3-42fa-47d2-977c-a30d4bf25e70":{
-                    "id":"a7d8a9d3-42fa-47d2-977c-a30d4bf25e70","name":"Student","type":"Class","owner":"054b674b-b2f2-4979-8566-971c056f9046","bounds":{
-                        "x":40,"y":390,"width":200,"height":120
-                    },"attributes":["7373d206-f8e4-47b3-94e8-ba573fc7fa0a"],"methods":["d7272ca5-1b70-4cf0-8cff-029f10389f6e"]
-                },"7373d206-f8e4-47b3-94e8-ba573fc7fa0a":{
-                    "id":"7373d206-f8e4-47b3-94e8-ba573fc7fa0a","name":"+ attribute: Type","type":"ClassAttribute","owner":"a7d8a9d3-42fa-47d2-977c-a30d4bf25e70","bounds":{
-                        "x":40.5,"y":430.5,"width":199,"height":40
+                },"6dfa6478-439f-4d79-bff6-a8e237d494ff":{
+                    "id":"6dfa6478-439f-4d79-bff6-a8e237d494ff","name":"+ swim()","type":"ClassMethod","owner":"9ad7a1a1-af25-42c4-8d65-714a8de5472a","bounds":{
+                        "x":0.5,"y":370.5,"width":199,"height":40
                     }
-                },"d7272ca5-1b70-4cf0-8cff-029f10389f6e":{
-                    "id":"d7272ca5-1b70-4cf0-8cff-029f10389f6e","name":"+ method()","type":"ClassMethod","owner":"a7d8a9d3-42fa-47d2-977c-a30d4bf25e70","bounds":{
-                        "x":40.5,"y":470.5,"width":199,"height":40
+                },"3ab9c586-6ba6-4b0b-b8d0-ff16e4cb3808":{
+                    "id":"3ab9c586-6ba6-4b0b-b8d0-ff16e4cb3808","name":"+ quack()","type":"ClassMethod","owner":"9ad7a1a1-af25-42c4-8d65-714a8de5472a","bounds":{
+                        "x":0.5,"y":410.5,"width":199,"height":30
                     }
-                },"6736c922-884d-4349-bbcc-008a99424f41":{
-                    "id":"6736c922-884d-4349-bbcc-008a99424f41","name":"Teacher","type":"Class","owner":"054b674b-b2f2-4979-8566-971c056f9046","bounds":{
-                        "x":460,"y":390,"width":200,"height":120
-                    },"attributes":["96466a23-7bf4-4718-99b6-961b7a54389a"],"methods":["d2b7607e-dff8-4320-a0b5-f959169ddbd8"]
-                },"96466a23-7bf4-4718-99b6-961b7a54389a":{
-                    "id":"96466a23-7bf4-4718-99b6-961b7a54389a","name":"+ attribute: Type","type":"ClassAttribute","owner":"6736c922-884d-4349-bbcc-008a99424f41","bounds":{
-                        "x":460.5,"y":430.5,"width":199,"height":40
+                },"01303540-2a59-4cdb-ac8c-1e4aad82b690":{
+                    "id":"01303540-2a59-4cdb-ac8c-1e4aad82b690","name":"Cow","type":"Class","owner":null,"bounds":{
+                        "x":250,"y":290,"width":200,"height":150
+                    },"attributes":["6a77b5e8-bf82-4dad-ae4b-4ab8c0304296"],"methods":["b209aab1-16c2-4ece-aac5-d68e8b60cc0c","4c2c2cf2-6710-4103-90d8-9f7f0a38da8d"]
+                },"6a77b5e8-bf82-4dad-ae4b-4ab8c0304296":{
+                    "id":"6a77b5e8-bf82-4dad-ae4b-4ab8c0304296","name":"+ skinPattern: String","type":"ClassAttribute","owner":"01303540-2a59-4cdb-ac8c-1e4aad82b690","bounds":{
+                        "x":250.5,"y":330.5,"width":199,"height":40
                     }
-                },"d2b7607e-dff8-4320-a0b5-f959169ddbd8":{
-                    "id":"d2b7607e-dff8-4320-a0b5-f959169ddbd8","name":"+ method()","type":"ClassMethod","owner":"6736c922-884d-4349-bbcc-008a99424f41","bounds":{
-                        "x":460.5,"y":470.5,"width":199,"height":40
+                },"b209aab1-16c2-4ece-aac5-d68e8b60cc0c":{
+                    "id":"b209aab1-16c2-4ece-aac5-d68e8b60cc0c","name":"+ walk()","type":"ClassMethod","owner":"01303540-2a59-4cdb-ac8c-1e4aad82b690","bounds":{
+                        "x":250.5,"y":370.5,"width":199,"height":40
                     }
-                },"b357cfbc-4bae-4bbc-ba14-a05efbb3e4a1":{
-                    "id":"b357cfbc-4bae-4bbc-ba14-a05efbb3e4a1","name":"Model","type":"Enumeration","owner":null,"bounds":{
-                        "x":750,"y":60,"width":200,"height":200
-                    },"attributes":["969becfa-00c3-4085-adf9-8aa48e8f234b","b185237f-4712-48ed-8614-18ae5f229aaa","ec79eb16-6a95-45d2-a319-8610c909e3c7","a7e6a0e1-db83-4cf8-aabd-81a21fa79030"],"methods":[]
-                },"969becfa-00c3-4085-adf9-8aa48e8f234b":{
-                    "id":"969becfa-00c3-4085-adf9-8aa48e8f234b","name":"Case 111","type":"ClassAttribute","owner":"b357cfbc-4bae-4bbc-ba14-a05efbb3e4a1","bounds":{
-                        "x":750.5,"y":110.5,"width":199,"height":40
+                },"4c2c2cf2-6710-4103-90d8-9f7f0a38da8d":{
+                    "id":"4c2c2cf2-6710-4103-90d8-9f7f0a38da8d","name":"+ moo()","type":"ClassMethod","owner":"01303540-2a59-4cdb-ac8c-1e4aad82b690","bounds":{
+                        "x":250.5,"y":410.5,"width":199,"height":30
                     }
-                },"b185237f-4712-48ed-8614-18ae5f229aaa":{
-                    "id":"b185237f-4712-48ed-8614-18ae5f229aaa","name":"Case 222","type":"ClassAttribute","owner":"b357cfbc-4bae-4bbc-ba14-a05efbb3e4a1","bounds":{
-                        "x":750.5,"y":150.5,"width":199,"height":40
+                },"3628792f-945d-4f7e-b9db-851151d0cf77":{
+                    "id":"3628792f-945d-4f7e-b9db-851151d0cf77","name":"Dog","type":"Class","owner":null,"bounds":{
+                        "x":500,"y":290,"width":200,"height":150
+                    },"attributes":["c9bf99c5-506e-44dc-84ff-3e59e0ac11e6"],"methods":["7a4acf19-1ef9-411d-a08c-d3ede8e7d6e7","ad8359a5-2cb5-461c-a9c5-290e254fa49a"]
+                },"c9bf99c5-506e-44dc-84ff-3e59e0ac11e6":{
+                    "id":"c9bf99c5-506e-44dc-84ff-3e59e0ac11e6","name":"+ breed: String","type":"ClassAttribute","owner":"3628792f-945d-4f7e-b9db-851151d0cf77","bounds":{
+                        "x":500.5,"y":330.5,"width":199,"height":40
                     }
-                },"ec79eb16-6a95-45d2-a319-8610c909e3c7":{
-                    "id":"ec79eb16-6a95-45d2-a319-8610c909e3c7","name":"Case 3321","type":"ClassAttribute","owner":"b357cfbc-4bae-4bbc-ba14-a05efbb3e4a1","bounds":{
-                        "x":750.5,"y":190.5,"width":199,"height":40
+                },"7a4acf19-1ef9-411d-a08c-d3ede8e7d6e7":{
+                    "id":"7a4acf19-1ef9-411d-a08c-d3ede8e7d6e7","name":"+ run()","type":"ClassMethod","owner":"3628792f-945d-4f7e-b9db-851151d0cf77","bounds":{
+                        "x":500.5,"y":370.5,"width":199,"height":40
                     }
-                },"a7e6a0e1-db83-4cf8-aabd-81a21fa79030":{
-                    "id":"a7e6a0e1-db83-4cf8-aabd-81a21fa79030","name":"asdas","type":"ClassAttribute","owner":"b357cfbc-4bae-4bbc-ba14-a05efbb3e4a1","bounds":{
-                        "x":750.5,"y":230.5,"width":199,"height":30
-                    }
-                },"db2b1b9c-999d-4ad9-97a8-11a5c10d078a":{
-                    "id":"db2b1b9c-999d-4ad9-97a8-11a5c10d078a","name":"Class","type":"Class","owner":null,"bounds":{
-                        "x":750,"y":360,"width":200,"height":120
-                    },"attributes":["005de506-7f4b-4a3a-9ec8-72e3535fe928"],"methods":["363bdeb0-3492-440d-9a78-88da3c02d0f7"]
-                },"005de506-7f4b-4a3a-9ec8-72e3535fe928":{
-                    "id":"005de506-7f4b-4a3a-9ec8-72e3535fe928","name":"+ attribute: Type","type":"ClassAttribute","owner":"db2b1b9c-999d-4ad9-97a8-11a5c10d078a","bounds":{
-                        "x":750.5,"y":400.5,"width":199,"height":40
-                    }
-                },"363bdeb0-3492-440d-9a78-88da3c02d0f7":{
-                    "id":"363bdeb0-3492-440d-9a78-88da3c02d0f7","name":"+ method()","type":"ClassMethod","owner":"db2b1b9c-999d-4ad9-97a8-11a5c10d078a","bounds":{
-                        "x":750.5,"y":440.5,"width":199,"height":40
+                },"ad8359a5-2cb5-461c-a9c5-290e254fa49a":{
+                    "id":"ad8359a5-2cb5-461c-a9c5-290e254fa49a","name":"+ bark()","type":"ClassMethod","owner":"3628792f-945d-4f7e-b9db-851151d0cf77","bounds":{
+                        "x":500.5,"y":410.5,"width":199,"height":30
                     }
                 }
             },"relationships":{
-                "19b2cb73-0cd5-43c5-aa5b-ce266e23845e":{
-                    "id":"19b2cb73-0cd5-43c5-aa5b-ce266e23845e","name":"","type":"ClassInheritance","owner":null,"bounds":{
-                        "x":135,"y":240,"width":240,"height":150
+                "984f4d42-db0d-490d-b4ed-37acc0334f4f":{
+                    "id":"984f4d42-db0d-490d-b4ed-37acc0334f4f","name":"","type":"ClassInheritance","owner":null,"bounds":{
+                        "x":345,"y":190,"width":260,"height":100
                     },"path":[{
-                        "x":5,"y":150
+                        "x":255,"y":100
                     },{
-                        "x":5,"y":75
+                        "x":255,"y":50
                     },{
-                        "x":235,"y":75
-                    },{
-                        "x":235,"y":0
-                    }],"source":{
-                        "direction":"Up","element":"a7d8a9d3-42fa-47d2-977c-a30d4bf25e70","multiplicity":"","role":""
-                    },"target":{
-                        "direction":"Down","element":"7f1e0d73-65af-4223-a4d4-8788063c4f60","multiplicity":"","role":""
-                    },"isManuallyLayouted":false
-                },"885804b3-c0f7-49a7-b713-9d1d3a4885f0":{
-                    "id":"885804b3-c0f7-49a7-b713-9d1d3a4885f0","name":"","type":"ClassInheritance","owner":null,"bounds":{
-                        "x":365,"y":240,"width":200,"height":150
-                    },"path":[{
-                        "x":195,"y":150
-                    },{
-                        "x":195,"y":75
-                    },{
-                        "x":5,"y":75
+                        "x":5,"y":50
                     },{
                         "x":5,"y":0
                     }],"source":{
-                        "direction":"Up","element":"6736c922-884d-4349-bbcc-008a99424f41","multiplicity":"","role":""
+                        "direction":"Up","element":"3628792f-945d-4f7e-b9db-851151d0cf77","multiplicity":"","role":""
                     },"target":{
-                        "direction":"Down","element":"7f1e0d73-65af-4223-a4d4-8788063c4f60","multiplicity":"","role":""
+                        "direction":"Down","element":"715bd47f-0341-4a24-9a6b-547c1bbe40a6","multiplicity":"","role":""
                     },"isManuallyLayouted":false
-                },"e34136f4-ea43-4bcb-99df-a63becfe6574":{
-                    "id":"e34136f4-ea43-4bcb-99df-a63becfe6574","name":"","type":"ClassComposition","owner":null,"bounds":{
-                        "x":818.3203125,"y":260,"width":45.578125,"height":110.5
+                },"2fcf4fe8-46f9-488d-bd86-e7e26ce27fd2":{
+                    "id":"2fcf4fe8-46f9-488d-bd86-e7e26ce27fd2","name":"","type":"ClassInheritance","owner":null,"bounds":{
+                        "x":345,"y":190,"width":10,"height":100
                     },"path":[{
-                        "x":31.6796875,"y":100
+                        "x":5,"y":100
                     },{
-                        "x":31.6796875,"y":0
+                        "x":5,"y":0
                     }],"source":{
-                        "direction":"Up","element":"db2b1b9c-999d-4ad9-97a8-11a5c10d078a","multiplicity":"1","role":"test"
+                        "direction":"Up","element":"01303540-2a59-4cdb-ac8c-1e4aad82b690","multiplicity":"","role":""
                     },"target":{
-                        "direction":"Down","element":"b357cfbc-4bae-4bbc-ba14-a05efbb3e4a1","multiplicity":"3","role":"test"
+                        "direction":"Down","element":"715bd47f-0341-4a24-9a6b-547c1bbe40a6","multiplicity":"","role":""
+                    },"isManuallyLayouted":false
+                },"c4a0bab9-203c-4bdd-91e2-99033cff9175":{
+                    "id":"c4a0bab9-203c-4bdd-91e2-99033cff9175","name":"","type":"ClassInheritance","owner":null,"bounds":{
+                        "x":95,"y":190,"width":260,"height":100
+                    },"path":[{
+                        "x":5,"y":100
+                    },{
+                        "x":5,"y":50
+                    },{
+                        "x":255,"y":50
+                    },{
+                        "x":255,"y":0
+                    }],"source":{
+                        "direction":"Up","element":"9ad7a1a1-af25-42c4-8d65-714a8de5472a","multiplicity":"","role":""
+                    },"target":{
+                        "direction":"Down","element":"715bd47f-0341-4a24-9a6b-547c1bbe40a6","multiplicity":"","role":""
                     },"isManuallyLayouted":false
                 }
             },"assessments":{
             }
-        },"lastUpdate":"2023-10-30T12:08:04.503Z"
+        }
     }
     """
 
