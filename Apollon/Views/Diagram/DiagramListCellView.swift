@@ -37,7 +37,7 @@ struct DiagramListCellView: View {
                     Text(diagram.title)
                         .font(.body)
                         .bold()
-                        .foregroundColor(Color(UIColor.systemBackground))
+                        .foregroundColor(Color.primary)
                         .lineLimit(1)
                     
                     Text(diagram.diagramType.rawValue.insertSpaceBeforeCapitalLetters())
@@ -47,22 +47,22 @@ struct DiagramListCellView: View {
                     
                     Text(formatDate(dateString: diagram.lastUpdate))
                         .font(.footnote)
-                        .foregroundColor(ApollonColor.toolBarItemColor)
+                        .foregroundColor(ApollonColor.darkGray)
                         .lineLimit(1)
                 }
                 .padding(.leading, 10)
                 .padding(.vertical, 5)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .background(ApollonColor.toolBarBackground)
+                .background(ApollonColor.lightGray)
             }
             .accessibilityIdentifier("DiagramNavigationButton_\(diagram.id)")
         }
         .cornerRadius(15)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
-                .stroke(ApollonColor.toolBarBackground, lineWidth: 1.5)
+                .stroke(ApollonColor.lightGray, lineWidth: 1.5)
         )
-        .shadow(color: ApollonColor.toolBarBackground.opacity(0.75), radius: 2, x: 0, y: 1)
+        .shadow(color: ApollonColor.lightGray.opacity(0.75), radius: 2, x: 0, y: 2)
         .contextMenu {
             Button {
                 newRenamingName = diagram.title
@@ -86,7 +86,7 @@ struct DiagramListCellView: View {
         }
         .alert("Rename Diagram", isPresented: $isRenaming) {
             TextField("Diagram Name", text: $newRenamingName)
-                .foregroundColor(Color(UIColor.systemBackground))
+                .foregroundColor(ApollonColor.darkGray)
             Button("Cancel", role: .cancel) {}
             Button("OK") {
                 diagram.title = newRenamingName

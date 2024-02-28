@@ -26,7 +26,7 @@ struct DiagramListView: View {
                         .padding(.bottom, 10)
 
                     Text("Add a new diagram with \(Image(systemName: "plus")) or import a diagram with \(Image(systemName: "square.and.arrow.down")).")
-                        .foregroundColor(ApollonColor.toolBarItemColor)
+                        .foregroundColor(ApollonColor.darkGray)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 20)
 
@@ -53,7 +53,7 @@ struct DiagramListView: View {
                     Text("Apollon")
                         .font(.title)
                         .bold()
-                        .foregroundColor(.white)
+                        .foregroundColor(Color.primary)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -61,7 +61,7 @@ struct DiagramListView: View {
                     } label: {
                         Image(systemName: "square.and.arrow.down")
                     }
-                    .foregroundColor(ApollonColor.toolBarItemColor)
+                    .foregroundColor(Color.accentColor)
                     .fileImporter(isPresented: $isImporting, allowedContentTypes: [.json], allowsMultipleSelection: false) { result in
                         do {
                             guard let selectedFile: URL = try result.get().first else { return }
@@ -107,11 +107,11 @@ struct DiagramListView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
-                    .foregroundColor(ApollonColor.toolBarItemColor)
+                    .foregroundColor(Color.accentColor)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(ApollonColor.toolBarBackground, for: .navigationBar)
+            .toolbarBackground(ApollonColor.lightGray, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
         }
     }

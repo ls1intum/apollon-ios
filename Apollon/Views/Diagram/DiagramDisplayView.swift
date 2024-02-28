@@ -32,13 +32,13 @@ struct DiagramDisplayView: View {
                         Text("Back")
                     }
                 }
-                .foregroundColor(ApollonColor.toolBarItemColor)
+                .foregroundColor(Color.accentColor)
             }
             ToolbarItem(placement: .principal) {
                 Text(diagram.title)
                     .font(.headline)
                     .bold()
-                    .foregroundColor(Color(UIColor.systemBackground))
+                    .foregroundColor(Color.primary)
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
@@ -67,10 +67,10 @@ struct DiagramDisplayView: View {
                     Image(systemName: "ellipsis.circle")
                 }
                 .accessibilityIdentifier("DiagramMenuButton")
-                .foregroundColor(ApollonColor.toolBarItemColor)
+                .foregroundColor(Color.accentColor)
                 .alert("Rename Diagram", isPresented: $isRenaming) {
                     TextField("Diagram Name", text: $newRenamingName)
-                        .foregroundColor(Color(UIColor.systemBackground))
+                        .foregroundColor(ApollonColor.darkGray)
                     Button("Cancel", role: .cancel) {}
                     Button("OK") {
                         diagram.title = newRenamingName
@@ -83,7 +83,7 @@ struct DiagramDisplayView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(ApollonColor.toolBarBackground, for: .navigationBar)
+        .toolbarBackground(ApollonColor.lightGray, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
     }
 }
