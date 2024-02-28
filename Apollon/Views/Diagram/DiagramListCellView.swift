@@ -55,6 +55,7 @@ struct DiagramListCellView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(ApollonColor.toolBarBackground)
             }
+            .accessibilityIdentifier("DiagramNavigationButton_\(diagram.id)")
         }
         .cornerRadius(15)
         .overlay(
