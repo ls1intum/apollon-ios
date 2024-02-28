@@ -22,7 +22,9 @@ platform :ios do
     capture_screenshots
     upload_to_app_store(
       api_key: api_key,
-      force: true
+      force: true,
+      overwrite_screenshots: true,
+      precheck_include_in_app_purchases: false
     )
   end
 
