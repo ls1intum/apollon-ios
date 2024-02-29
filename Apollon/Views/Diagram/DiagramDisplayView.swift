@@ -70,7 +70,6 @@ struct DiagramDisplayView: View {
                 .foregroundColor(Color.accentColor)
                 .alert("Rename Diagram", isPresented: $isRenaming) {
                     TextField("Diagram Name", text: $newRenamingName)
-                        .foregroundColor(ApollonColor.darkGray)
                     Button("Cancel", role: .cancel) {}
                     Button("OK") {
                         diagram.title = newRenamingName

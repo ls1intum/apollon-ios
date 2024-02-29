@@ -86,7 +86,6 @@ struct DiagramListCellView: View {
         }
         .alert("Rename Diagram", isPresented: $isRenaming) {
             TextField("Diagram Name", text: $newRenamingName)
-                .foregroundColor(ApollonColor.darkGray)
             Button("Cancel", role: .cancel) {}
             Button("OK") {
                 diagram.title = newRenamingName
