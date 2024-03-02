@@ -29,6 +29,7 @@
 		F7DEC4632B88FB70009677FE /* ApollonSnapshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC4622B88FB70009677FE /* ApollonSnapshotUITests.swift */; };
 		F7DEC46C2B88FB92009677FE /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC46B2B88FB92009677FE /* SnapshotHelper.swift */; };
 		F7DEC46F2B8BBD1B009677FE /* MockDiagrams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC46E2B8BBD1B009677FE /* MockDiagrams.swift */; };
+		F7DEC4752B933DA2009677FE /* ImportErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DEC4742B933DA2009677FE /* ImportErrorMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		F7DEC4622B88FB70009677FE /* ApollonSnapshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApollonSnapshotUITests.swift; sourceTree = "<group>"; };
 		F7DEC46B2B88FB92009677FE /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		F7DEC46E2B8BBD1B009677FE /* MockDiagrams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDiagrams.swift; sourceTree = "<group>"; };
+		F7DEC4742B933DA2009677FE /* ImportErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportErrorMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				F734D1812B179A1100435866 /* Diagram */,
+				F7DEC4742B933DA2009677FE /* ImportErrorMessageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				F734D19A2B179A1200435866 /* ApollonDiagram.swift in Sources */,
 				F79533942B84958500962DBD /* ViewExtension.swift in Sources */,
 				F734D1962B179A1200435866 /* DiagramViewModel.swift in Sources */,
+				F7DEC4752B933DA2009677FE /* ImportErrorMessageView.swift in Sources */,
 				F734D1972B179A1200435866 /* StringExtension.swift in Sources */,
 				F734D1452B17980D00435866 /* ApollonApp.swift in Sources */,
 				F7DEC46F2B8BBD1B009677FE /* MockDiagrams.swift in Sources */,

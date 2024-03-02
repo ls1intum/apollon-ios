@@ -8,10 +8,10 @@ struct DiagramDisplayView: View {
     @Environment(\.modelContext) private var modelContext
     @ObservedObject var viewModel: DiagramViewModel
     @State var diagram: ApollonDiagram
-    @State private var isExporting = false
-    @State private var isRenaming = false
-    @State private var newRenamingName = ""
-
+    @State private var isExportingDiagram = false
+    @State private var isRenamingDiagram = false
+    @State private var newDiagramName = ""
+    
     var body: some View {
         ZStack {
             ApollonEdit(umlModel: $diagram.model,
@@ -43,14 +43,14 @@ struct DiagramDisplayView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
                     Button {
-                        newRenamingName = diagram.title
-                        isRenaming = true
+                        newDiagramName = diagram.title
+                        isRenamingDiagram = true
                     } label: {
                         Label("Rename", systemImage: "pencil")
                     }
                     Button {
                         viewModel.renderExport()
-                        self.isExporting = true
+                        self.isExportingDiagram = true
                     } label: {
                         Label("Export", systemImage: "square.and.arrow.up")
                     }
@@ -68,21 +68,20 @@ struct DiagramDisplayView: View {
                 }
                 .accessibilityIdentifier("DiagramMenuButton")
                 .foregroundColor(Color.accentColor)
-                .alert("Rename Diagram", isPresented: $isRenaming) {
-                    TextField("Diagram Name", text: $newRenamingName)
+                .alert("Rename Diagram", isPresented: $isRenamingDiagram) {
+                    TextField("Diagram Name", text: $newDiagramName)
                     Button("Cancel", role: .cancel) {}
                     Button("OK") {
-                        diagram.title = newRenamingName
+                        diagram.title = newDiagramName
                     }
                 } message: {
                     Text("Enter a new name for your diagram.")
                 }
-                .exportDiagram(viewModel: viewModel, isExporting: $isExporting)
+                .exportDiagram(viewModel: viewModel, isExporting: $isExportingDiagram)
             }
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(ApollonColor.lightGray, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
     }
 }

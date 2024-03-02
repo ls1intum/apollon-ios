@@ -7,9 +7,9 @@ struct DiagramListCellView: View {
     @Environment(\.modelContext) private var modelContext
     @ObservedObject var viewModel: DiagramViewModel
     @State var diagram: ApollonDiagram
-    @State private var isExporting = false
-    @State private var isRenaming = false
-    @State private var newRenamingName = ""
+    @State private var isExportingDiagram = false
+    @State private var isRenamingDiagram = false
+    @State private var newDiagramName = ""
     
     init(diagram: ApollonDiagram) {
         self.diagram = diagram
@@ -61,18 +61,18 @@ struct DiagramListCellView: View {
         .overlay(
             RoundedRectangle(cornerRadius: 15)
                 .stroke(ApollonColor.lightGray, lineWidth: 1.5)
+                .shadow(color: ApollonColor.lightGray.opacity(0.5), radius: 2, x: 0, y: 0)
         )
-        .shadow(color: ApollonColor.lightGray.opacity(0.75), radius: 2, x: 0, y: 2)
         .contextMenu {
             Button {
-                newRenamingName = diagram.title
-                isRenaming = true
+                newDiagramName = diagram.title
+                isRenamingDiagram = true
             } label: {
                 Label("Rename", systemImage: "pencil")
             }
             Button {
                 viewModel.renderExport()
-                self.isExporting = true
+                self.isExportingDiagram = true
             } label: {
                 Label("Export", systemImage: "square.and.arrow.up")
             }
@@ -84,16 +84,16 @@ struct DiagramListCellView: View {
                 Label("Delete", systemImage: "trash")
             }
         }
-        .alert("Rename Diagram", isPresented: $isRenaming) {
-            TextField("Diagram Name", text: $newRenamingName)
+        .alert("Rename Diagram", isPresented: $isRenamingDiagram) {
+            TextField("Diagram Name", text: $newDiagramName)
             Button("Cancel", role: .cancel) {}
             Button("OK") {
-                diagram.title = newRenamingName
+                diagram.title = newDiagramName
             }
         } message: {
             Text("Enter a new name for your diagram.")
         }
-        .exportDiagram(viewModel: viewModel, isExporting: $isExporting)
+        .exportDiagram(viewModel: viewModel, isExporting: $isExportingDiagram)
     }
     
     private func formatDate(dateString: String) -> String {
