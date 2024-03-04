@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0673F70A2B9603DA00FA3390 /* RelativeDateTimeFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673F7092B9603DA00FA3390 /* RelativeDateTimeFormatterExtension.swift */; };
+		0673F70C2B96057500FA3390 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673F70B2B96057500FA3390 /* DateFormatter.swift */; };
 		F734D1452B17980D00435866 /* ApollonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F734D1442B17980D00435866 /* ApollonApp.swift */; };
 		F734D17C2B17996500435866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F734D1782B17996500435866 /* Assets.xcassets */; };
 		F734D17D2B17996500435866 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F734D17A2B17996500435866 /* Preview Assets.xcassets */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0673F7092B9603DA00FA3390 /* RelativeDateTimeFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeDateTimeFormatterExtension.swift; sourceTree = "<group>"; };
+		0673F70B2B96057500FA3390 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		06FAB0C42B347540004B02DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F734D1412B17980D00435866 /* Apollon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apollon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F734D1442B17980D00435866 /* ApollonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApollonApp.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				F734D18A2B179A1200435866 /* StringExtension.swift */,
 				F77BAF872B81206800A36C94 /* DateExtension.swift */,
 				F79533932B84958500962DBD /* ViewExtension.swift */,
+				0673F7092B9603DA00FA3390 /* RelativeDateTimeFormatterExtension.swift */,
+				0673F70B2B96057500FA3390 /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -324,8 +330,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0673F70C2B96057500FA3390 /* DateFormatter.swift in Sources */,
 				F734D1922B179A1200435866 /* DiagramListCellView.swift in Sources */,
 				F734D1912B179A1200435866 /* DiagramDisplayView.swift in Sources */,
+				0673F70A2B9603DA00FA3390 /* RelativeDateTimeFormatterExtension.swift in Sources */,
 				F77BAF882B81206800A36C94 /* DateExtension.swift in Sources */,
 				F734D1992B179A1200435866 /* ApollonColor.swift in Sources */,
 				F734D1932B179A1200435866 /* DiagramListView.swift in Sources */,
