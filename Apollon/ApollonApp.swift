@@ -38,7 +38,6 @@ struct ApollonApp: App {
 
     private func checkIfMockingDiagrams() -> ModelContainer {
         if CommandLine.arguments.contains("-Screenshots") {
-#if DEBUG
             let mockConfig = ModelConfiguration(isStoredInMemoryOnly: true)
             let mockContainer = try! ModelContainer(for: ApollonDiagram.self, configurations: mockConfig)
             do {
@@ -52,7 +51,6 @@ struct ApollonApp: App {
                 print("Error decoding JSON: \(error)")
             }
             return mockContainer
-#endif
         } else {
             let container = try! ModelContainer(for: ApollonDiagram.self)
             return container
