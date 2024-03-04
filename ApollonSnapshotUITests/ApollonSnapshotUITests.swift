@@ -12,38 +12,23 @@ class ApollonSnapshotUITests: XCTestCase {
     }
 
     func testTakeDarkModePortraitScreenshots() {
-        app.launchArguments += ["-dark_mode", "YES"]
         XCUIDevice.shared.orientation = .portrait
+        app.launchArguments += ["-ColorScheme", "Dark"]
         app.launch()
 
         // Tap Diagram
         app.buttons["DiagramNavigationButton_1"].tap()
 
         // Sleep
-        sleep(2)
+        sleep(1)
 
         // Snapshot
         snapshot("DiagramDisplayViewPortraitDarkMode")
     }
 
-    func testTakeDarkModeLandscapeScreenshots() {
-        app.launchArguments += ["-dark_mode", "YES"]
-        XCUIDevice.shared.orientation = .landscapeRight
-        app.launch()
-
-        // Tap Diagram
-        app.buttons["DiagramNavigationButton_1"].tap()
-
-        // Sleep
-        sleep(2)
-
-        // Snapshot
-        snapshot("DiagramDisplayViewLandscapeDarkMode")
-    }
-
     func testTakePortraitScreenshots() {
-        app.launchArguments += ["-dark_mode", "NO"]
         XCUIDevice.shared.orientation = .portrait
+        app.launchArguments += ["-ColorScheme", "Light"]
         app.launch()
 
         // Snapshot
@@ -53,7 +38,7 @@ class ApollonSnapshotUITests: XCTestCase {
         app.buttons["DiagramNavigationButton_1"].tap()
 
         // Sleep
-        sleep(2)
+        sleep(1)
 
         // Tap random location on screen to select element
         app.images["UMLGridBackground"].tap()
@@ -90,8 +75,8 @@ class ApollonSnapshotUITests: XCTestCase {
     }
 
     func testTakeLandscapeScreenshots() {
-        app.launchArguments += ["-dark_mode", "NO"]
         XCUIDevice.shared.orientation = .landscapeRight
+        app.launchArguments += ["-ColorScheme", "Light"]
         app.launch()
 
         // Snapshot
@@ -101,7 +86,7 @@ class ApollonSnapshotUITests: XCTestCase {
         app.buttons["DiagramNavigationButton_1"].tap()
 
         // Sleep
-        sleep(3)
+        sleep(1)
 
         // Tap random location on screen to select element
         app.images["UMLGridBackground"].tap()
@@ -138,9 +123,8 @@ class ApollonSnapshotUITests: XCTestCase {
     }
 }
 
-
+// Sends a tap event to a unhittable element
 // https://stackoverflow.com/questions/33422681/xcode-ui-test-ui-testing-failure-failed-to-scroll-to-visible-by-ax-action
-// Sends a tap event to a hittable/unhittable element
 extension XCUIElement {
     func forceTapElement() {
         if self.isHittable {

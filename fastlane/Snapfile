@@ -2,7 +2,9 @@
 
 devices([
    "iPhone 15 Pro Max",
-   "iPad Pro (12.9-inch) (6th generation)"
+   "iPhone 14 Plus",
+   "iPad Pro (12.9-inch) (6th generation)",
+   "iPad Pro (12.9-inch) (2nd generation)"
 ])
 
 languages([
