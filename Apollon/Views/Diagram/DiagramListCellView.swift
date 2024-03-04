@@ -45,7 +45,7 @@ struct DiagramListCellView: View {
                         .foregroundColor(Color.accentColor)
                         .lineLimit(1)
                     
-                    Text(formatDate(dateString: diagram.lastUpdate))
+                    Text(diagram.relativeDateDescription)
                         .font(.footnote)
                         .foregroundColor(ApollonColor.darkGray)
                         .lineLimit(1)
@@ -94,16 +94,5 @@ struct DiagramListCellView: View {
             Text("Enter a new name for your diagram.")
         }
         .exportDiagram(viewModel: viewModel, isExporting: $isExportingDiagram)
-    }
-    
-    private func formatDate(dateString: String) -> String {
-        let isoFormatter = ISO8601DateFormatter()
-        isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-        if let isoDate = isoFormatter.date(from: dateString) {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy, HH:mm"
-            return dateFormatter.string(from: isoDate)
-        }
-        return ""
     }
 }

@@ -18,4 +18,21 @@ public class ApollonDiagram {
         self.diagramType = diagramType
         self.model = model ?? UMLModel(type: diagramType)
     }
+    
+    /// Returns a relative date description for the model's last update date
+    /// If the last update date is within the last hour a relative string is returned, e.g. 11 minutes ago
+    /// Otherwise, the date and time is displayed, e.g. Today, 11:45 or 13.02.24, 11:45
+    public var relativeDateDescription: String {
+        let isoFormatter = ISO8601DateFormatter()
+        isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        guard let date = isoFormatter.date(from: lastUpdate) else {
+            return ""
+        }
+        
+        if let diff = Calendar.current.dateComponents([.hour], from: date, to: Date()).hour, diff < 1 {
+            return RelativeDateTimeFormatter.namedAndSpelledOut.localizedString(for: date, relativeTo: Date())
+        }
+        
+        return DateFormatter.dateAndTime.string(from: date)
+    }
 }
