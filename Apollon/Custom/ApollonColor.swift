@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct ApollonColor {
-    static let toolBarBackground = Color("ApollonToolbarColor")
-    static let toolBarItemColor = Color("ApollonToolbarItemColor")
+public struct ApollonColor {
+    public static let darkGray = Color("ApollonDarkGray")
+    public static let lightGray = Color("ApollonLightGray")
 }

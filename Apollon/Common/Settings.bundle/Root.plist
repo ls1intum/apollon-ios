@@ -4,32 +4,8 @@
 <dict>
 	<key>StringsTable</key>
 	<string>Root</string>
-	<key>Title</key>
-	<string>Settings</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>Appearance</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>DarkMode</string>
-			<key>Key</key>
-			<string>dark_mode</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>Information</string>
-		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>

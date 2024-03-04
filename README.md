@@ -20,12 +20,14 @@ Apollon iOS allows importing JSON files for diagrams created on [Apollon Standal
 Diagrams created and edited on the Apollon iOS application can also be exported to JSON, allowing diagrams to be used between both applications.
 
 ### UML diagrams
-Currently, Apollon iOS supports creating three different UML diagrams, with more types to be added in the future.
+Currently, Apollon iOS supports creating multiple different UML diagrams, with more types to be added in the future.
 
 The list of UML diagrams includes:
 -   `Class Diagram`
 -   `Object Diagram`
+-   `Activity Diagram`
 -   `Use Case Diagram`
+-   `Component Diagram`
 
 ## Screenshots
 | Diagrams | Editor | Export |

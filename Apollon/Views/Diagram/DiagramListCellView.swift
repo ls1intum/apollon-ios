@@ -7,9 +7,9 @@ struct DiagramListCellView: View {
     @Environment(\.modelContext) private var modelContext
     @ObservedObject var viewModel: DiagramViewModel
     @State var diagram: ApollonDiagram
-    @State private var isExporting = false
-    @State private var isRenaming = false
-    @State private var newRenamingName = ""
+    @State private var isExportingDiagram = false
+    @State private var isRenamingDiagram = false
+    @State private var newDiagramName = ""
     
     init(diagram: ApollonDiagram) {
         self.diagram = diagram
@@ -37,7 +37,7 @@ struct DiagramListCellView: View {
                     Text(diagram.title)
                         .font(.body)
                         .bold()
-                        .foregroundColor(Color(UIColor.systemBackground))
+                        .foregroundColor(Color.primary)
                         .lineLimit(1)
                     
                     Text(diagram.diagramType.rawValue.insertSpaceBeforeCapitalLetters())
@@ -47,32 +47,32 @@ struct DiagramListCellView: View {
                     
                     Text(formatDate(dateString: diagram.lastUpdate))
                         .font(.footnote)
-                        .foregroundColor(ApollonColor.toolBarItemColor)
+                        .foregroundColor(ApollonColor.darkGray)
                         .lineLimit(1)
                 }
                 .padding(.leading, 10)
                 .padding(.vertical, 5)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .background(ApollonColor.toolBarBackground)
+                .background(ApollonColor.lightGray)
             }
             .accessibilityIdentifier("DiagramNavigationButton_\(diagram.id)")
         }
         .cornerRadius(15)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
-                .stroke(ApollonColor.toolBarBackground, lineWidth: 1.5)
+                .stroke(ApollonColor.lightGray, lineWidth: 1.5)
+                .shadow(color: ApollonColor.lightGray.opacity(0.5), radius: 2, x: 0, y: 0)
         )
-        .shadow(color: ApollonColor.toolBarBackground.opacity(0.75), radius: 2, x: 0, y: 1)
         .contextMenu {
             Button {
-                newRenamingName = diagram.title
-                isRenaming = true
+                newDiagramName = diagram.title
+                isRenamingDiagram = true
             } label: {
                 Label("Rename", systemImage: "pencil")
             }
             Button {
                 viewModel.renderExport()
-                self.isExporting = true
+                self.isExportingDiagram = true
             } label: {
                 Label("Export", systemImage: "square.and.arrow.up")
             }
@@ -84,17 +84,16 @@ struct DiagramListCellView: View {
                 Label("Delete", systemImage: "trash")
             }
         }
-        .alert("Rename Diagram", isPresented: $isRenaming) {
-            TextField("Diagram Name", text: $newRenamingName)
-                .foregroundColor(Color(UIColor.systemBackground))
+        .alert("Rename Diagram", isPresented: $isRenamingDiagram) {
+            TextField("Diagram Name", text: $newDiagramName)
             Button("Cancel", role: .cancel) {}
             Button("OK") {
-                diagram.title = newRenamingName
+                diagram.title = newDiagramName
             }
         } message: {
             Text("Enter a new name for your diagram.")
         }
-        .exportDiagram(viewModel: viewModel, isExporting: $isExporting)
+        .exportDiagram(viewModel: viewModel, isExporting: $isExportingDiagram)
     }
     
     private func formatDate(dateString: String) -> String {

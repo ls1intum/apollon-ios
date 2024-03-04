@@ -6,7 +6,6 @@ struct DiagramListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var diagrams: [ApollonDiagram]
     @State private var isImporting = false
-    @State private var shouldNavigate = false
     @State private var importErrorMessage: String = ""
 
     var body: some View {
@@ -26,7 +25,7 @@ struct DiagramListView: View {
                         .padding(.bottom, 10)
 
                     Text("Add a new diagram with \(Image(systemName: "plus")) or import a diagram with \(Image(systemName: "square.and.arrow.down")).")
-                        .foregroundColor(ApollonColor.toolBarItemColor)
+                        .foregroundColor(ApollonColor.darkGray)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 20)
 
@@ -53,7 +52,7 @@ struct DiagramListView: View {
                     Text("Apollon")
                         .font(.title)
                         .bold()
-                        .foregroundColor(.white)
+                        .foregroundColor(Color.primary)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -61,7 +60,7 @@ struct DiagramListView: View {
                     } label: {
                         Image(systemName: "square.and.arrow.down")
                     }
-                    .foregroundColor(ApollonColor.toolBarItemColor)
+                    .foregroundColor(Color.accentColor)
                     .fileImporter(isPresented: $isImporting, allowedContentTypes: [.json], allowsMultipleSelection: false) { result in
                         do {
                             guard let selectedFile: URL = try result.get().first else { return }
@@ -107,11 +106,10 @@ struct DiagramListView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
-                    .foregroundColor(ApollonColor.toolBarItemColor)
+                    .foregroundColor(Color.accentColor)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(ApollonColor.toolBarBackground, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
         }
     }
@@ -125,39 +123,5 @@ struct DiagramListView: View {
             }
         }
         return Result { try String(contentsOf: url) }
-    }
-}
-
-struct ImportErrorMessageView: View {
-    @Binding var errorMessage: String
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text("Import failed")
-                    .foregroundColor(.red)
-                    .bold()
-                Spacer()
-                Button {
-                    errorMessage = ""
-                } label: {
-                    Image(systemName: "x.circle")
-                        .foregroundColor(.red)
-                }
-            }
-            Text(errorMessage)
-                .foregroundColor(.red)
-        }
-        .padding(5)
-        .overlay {
-            RoundedRectangle(cornerRadius: 3)
-                .stroke(.red, lineWidth: 1)
-        }
-        .background {
-            RoundedRectangle(cornerRadius: 3)
-                .foregroundColor(Color.red.opacity(0.1))
-        }
-        .padding(.top, 10)
-        .padding(.horizontal, 10)
     }
 }
