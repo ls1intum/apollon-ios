@@ -15,21 +15,11 @@ struct DiagramListView: View {
                     ImportErrorMessageView(errorMessage: $importErrorMessage)
                 }
                 if diagrams.isEmpty {
-                    Spacer()
-
-                    Text("No diagrams available...")
-                        .foregroundColor(.primary)
-                        .font(.title2)
-                        .bold()
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 10)
-
-                    Text("Add a new diagram with \(Image(systemName: "plus")) or import a diagram with \(Image(systemName: "square.and.arrow.down")).")
-                        .foregroundColor(ApollonColor.darkGray)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
-
-                    Spacer()
+                    ContentUnavailableView(
+                        "No Diagrams Available",
+                        systemImage: "rectangle.portrait.on.rectangle.portrait.slash",
+                        description: Text("Add a new diagram with \(Image(systemName: "plus")) or import a diagram with \(Image(systemName: "square.and.arrow.down")).")
+                    )
                 } else {
                     ScrollView(.vertical, showsIndicators: false) {
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
