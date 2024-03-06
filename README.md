@@ -32,7 +32,7 @@ The list of UML diagrams includes:
 ## Screenshots
 | Diagrams | Editor | Export |
 |    :---:    |    :---:    |    :---:    |
-| <img src="/docs/screenshots/Diagrams-Screenshot.png" width="300"/> | <img src="/docs/screenshots/Editor-Screenshot.png" width="300"/> | <img src="/docs/screenshots/Share-Screenshot.png" width="300"/> |
+| <img src="/docs/images/Diagrams-Screenshot.png" width="300"/> | <img src="/docs/images/Editor-Screenshot.png" width="300"/> | <img src="/docs/images/Share-Screenshot.png" width="300"/> |
 
 ## Usage
 1. Clone the repository
