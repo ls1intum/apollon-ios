@@ -1,17 +1,17 @@
-# Apollon iOS
+# Apollon - UML Modeling Editor
 
 A UML modeling editor application for iOS written in Swift and SwiftUI.
 
 ## Main Features
-### Easy to use editor
+### Easy to use Editor
 The user interface of Apollon iOS is simple to use. 
 -   Select the diagram type you want to draw or choose to import a file.
 -   Adding an element is as easy as choosing the desired element from the elements menu by clicking the `+` button at the bottom of the screen.
 -   Drawing a connection between elements is done by selecting one element and dragging a path to another.
 -   Edit the text of any element by selecting it and clicking the menu button. An easy-to-use menu will allow you to do so.
 -   Elements can be moved and resized by holding the move or resize button on the selected element.
--   Supports dark/light themes for the editor.
--   Offline Mode: Diagrams are saved locally on your device with SwiftData.
+-   Supports dark and light appearances.
+-   Diagrams are saved locally on your device.
 
 <img src="/docs/Apollon-iOS-Demo.gif" alt="Apollon iOS features" width="300"/>
 
@@ -46,7 +46,7 @@ git clone https://github.com/ls1intum/apollon-ios.git
 3. Compile and run the application in your simulator
 
 ## Technical
-The main modeling functionality is imported from the [Apollon-iOS-Module](https://github.com/ls1intum/apollon-ios-module) SPM package. We utilize the `ApollonEdit` module to enable users to create, modify, and interact with UML diagrams.
+The app was created as a native iOS implementation of the [Apollon Standalone](https://apollon.ase.cit.tum.de). We employ the MVVM design pattern as the general architectural pattern. The main modeling functionality is imported from the [Apollon-iOS-Module](https://github.com/ls1intum/apollon-ios-module) SPM package and utilizes the `ApollonEdit` module to enable users to create, modify, and interact with UML diagrams. The previews on the home screen utilize the `ApollonView` module to allow users to see a preview of their diagram. Further, the diagrams are saved locally on the device using SwiftData, so no internet connection is needed.
 
 ## Contact
-For issues or questions regarding the app, please contact [iOS Support](mailto:ios-support.ase@xcit.tum.de).
+For issues or questions regarding the app, please contact [Support](mailto:ios-support.ase@xcit.tum.de).
