@@ -47,3 +47,6 @@ git clone https://github.com/ls1intum/apollon-ios.git
 
 ## Technical
 The main modeling functionality is imported from the [Apollon-iOS-Module](https://github.com/ls1intum/apollon-ios-module) SPM package. We utilize the `ApollonEdit` module to enable users to create, modify, and interact with UML diagrams.
+
+## Contact
+For issues or questions regarding the app, please contact [iOS Support](mailto:ios-support.ase@xcit.tum.de).
