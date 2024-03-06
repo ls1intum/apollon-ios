@@ -1,12 +1,13 @@
 {
+  "originHash" : "8e58cbc1a1922049f837e7b416d38a81d4c96c3684875751ca91d74de94b5027",
   "pins" : [
     {
       "identity" : "apollon-ios-module",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ls1intum/apollon-ios-module",
       "state" : {
-        "revision" : "acf45b166f4839ff5ac4f13ea0692add332a6e62",
-        "version" : "1.0.7"
+        "revision" : "424631162a5f05bcb0278d59ffb8f9b6f9d9c6ca",
+        "version" : "1.0.8"
       }
     },
     {
@@ -19,5 +20,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
