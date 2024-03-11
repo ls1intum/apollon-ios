@@ -11,29 +11,17 @@ class ApollonSnapshotUITests: XCTestCase {
     }
 
     @MainActor
-    func testTakeDarkModePortraitScreenshots() {
-        XCUIDevice.shared.orientation = .portrait
-        app.launchArguments += ["-ColorScheme", "Dark"]
-        app.launch()
-
-        // Tap Diagram
-        app.buttons["DiagramNavigationButton_1"].tap()
-
-        // Sleep
-        sleep(1)
-
-        // Snapshot
-        snapshot("DiagramDisplayViewPortraitDarkMode")
-    }
-
-    @MainActor
-    func testTakePortraitScreenshots() {
-        XCUIDevice.shared.orientation = .portrait
+    func testTakeScreenshots() {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            XCUIDevice.shared.orientation = .portrait
+        } else if UIDevice.current.userInterfaceIdiom == .pad {
+            XCUIDevice.shared.orientation = .landscapeRight
+        }
         app.launchArguments += ["-ColorScheme", "Light"]
         app.launch()
 
-        // Snapshot
-        snapshot("DiagramListViewPortrait")
+        // Snapshot 01
+        snapshot("01DiagramListView")
 
         // Tap diagram
         app.buttons["DiagramNavigationButton_1"].tap()
@@ -44,23 +32,23 @@ class ApollonSnapshotUITests: XCTestCase {
         // Tap random location on screen to select element
         app.images["UMLGridBackground"].tap()
 
-        // Snapshot
-        snapshot("SelectElementViewPortrait")
+        // Snapshot 02
+        snapshot("02SelectElementView")
 
         // Tap edit element button to open edit sheet
         app.buttons["EditElementButton"].tap()
 
-        // Snapshot
-        snapshot("EditElementViewPortrait")
+        // Snapshot 03
+        snapshot("03EditElementView")
 
         // Close element edit sheet
         app.buttons["Done"].tap()
 
         // Tap add element button
         app.buttons["AddElementButton"].tap()
-        
-        // Snapshot
-        snapshot("DiagramDisplayViewPortrait")
+
+        // Snapshot 04
+        snapshot("04DiagramDisplayView")
 
         // Tap add element button to close menu
         app.buttons["AddElementButton"].forceTapElement()
@@ -71,45 +59,28 @@ class ApollonSnapshotUITests: XCTestCase {
         // Tap export diagram button
         app.buttons["DiagramExportButton"].forceTapElement()
 
-        // Snapshot
-        snapshot("DiagramExportButtonPortrait")
+        // Snapshot 05
+        snapshot("05DiagramExportButton")
     }
 
     @MainActor
-    func testTakeLandscapeScreenshots() {
-        XCUIDevice.shared.orientation = .landscapeRight
-        app.launchArguments += ["-ColorScheme", "Light"]
+    func testTakeDarkModeScreenshots() {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            XCUIDevice.shared.orientation = .portrait
+        } else if UIDevice.current.userInterfaceIdiom == .pad {
+            XCUIDevice.shared.orientation = .landscapeRight
+        }
+        app.launchArguments += ["-ColorScheme", "Dark"]
         app.launch()
 
-        // Snapshot
-        snapshot("DiagramListViewLandscape")
-
-        // Tap diagram
+        // Tap Diagram
         app.buttons["DiagramNavigationButton_1"].tap()
 
         // Sleep
         sleep(1)
 
-        // Tap random location on screen to select element
-        app.images["UMLGridBackground"].tap()
-
-        // Snapshot
-        snapshot("SelectElementViewLandscape")
-
-        // Tap edit element button to open edit sheet
-        app.buttons["EditElementButton"].tap()
-
-        // Snapshot
-        snapshot("EditElementViewLandscape")
-
-        // Close element edit sheet
-        app.buttons["Done"].tap()
-
-        // Tap add element button
-        app.buttons["AddElementButton"].tap()
-
-        // Snapshot
-        snapshot("DiagramDisplayViewLandscape")
+        // Snapshot 06
+        snapshot("06DiagramDisplayViewDarkMode")
     }
 }
 
