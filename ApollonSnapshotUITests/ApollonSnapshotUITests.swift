@@ -1,16 +1,16 @@
 import XCTest
-import SwiftData
 
-@MainActor
 class ApollonSnapshotUITests: XCTestCase {
     var app: XCUIApplication!
 
+    @MainActor
     override func setUp() {
         app = XCUIApplication()
         setupSnapshot(app)
         app.launchArguments += ["-Screenshots"]
     }
 
+    @MainActor
     func testTakeDarkModePortraitScreenshots() {
         XCUIDevice.shared.orientation = .portrait
         app.launchArguments += ["-ColorScheme", "Dark"]
@@ -26,6 +26,7 @@ class ApollonSnapshotUITests: XCTestCase {
         snapshot("DiagramDisplayViewPortraitDarkMode")
     }
 
+    @MainActor
     func testTakePortraitScreenshots() {
         XCUIDevice.shared.orientation = .portrait
         app.launchArguments += ["-ColorScheme", "Light"]
@@ -74,6 +75,7 @@ class ApollonSnapshotUITests: XCTestCase {
         snapshot("DiagramExportButtonPortrait")
     }
 
+    @MainActor
     func testTakeLandscapeScreenshots() {
         XCUIDevice.shared.orientation = .landscapeRight
         app.launchArguments += ["-ColorScheme", "Light"]
@@ -108,18 +110,6 @@ class ApollonSnapshotUITests: XCTestCase {
 
         // Snapshot
         snapshot("DiagramDisplayViewLandscape")
-
-        // Tap add element button to close menu
-        app.buttons["AddElementButton"].forceTapElement()
-
-        // Tap diagram menu
-        app.buttons["DiagramMenuButton"].forceTapElement()
-
-        // Tap export diagram button
-        app.buttons["DiagramExportButton"].forceTapElement()
-
-        // Snapshot
-        snapshot("DiagramExportButtonLandscape")
     }
 }
 
