@@ -1,7 +1,7 @@
 # For more information about all available options run fastlane action snapshot
 
 devices([
-   "iPhone 14 Pro Max",
+   "iPhone 15 Plus",
    "iPhone 14 Plus",
    "iPad Pro (12.9-inch) (6th generation)",
    "iPad Pro (12.9-inch) (2nd generation)"
