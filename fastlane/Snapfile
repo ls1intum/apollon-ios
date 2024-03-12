@@ -21,8 +21,8 @@ override_status_bar(true)
 
 headless(false)
 
-concurrent_simulators(false)
+#concurrent_simulators(false)
 
-number_of_retries(3)
+number_of_retries(2)
 
 skip_open_summary(true)
