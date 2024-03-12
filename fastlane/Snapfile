@@ -16,5 +16,13 @@ scheme("ApollonSnapshotUITests")
 output_directory("./screenshots")
 
 clear_previous_screenshots(true)
+
 override_status_bar(true)
+
+headless(false)
+
+concurrent_simulators(false)
+
+number_of_retries(3)
+
 skip_open_summary(true)
