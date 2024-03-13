@@ -19,9 +19,9 @@ clear_previous_screenshots(true)
 
 override_status_bar(true)
 
-#headless(false)
+headless(false)
 
-#concurrent_simulators(false)
+concurrent_simulators(false)
 
 number_of_retries(2)
 
