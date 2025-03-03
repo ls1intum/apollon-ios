@@ -5,7 +5,7 @@ import ApollonView
 
 struct DiagramListCellView: View {
     @Environment(\.modelContext) private var modelContext
-    @ObservedObject var viewModel: DiagramViewModel
+    @State var viewModel: DiagramViewModel
     @State var diagram: ApollonDiagram
     @State private var isExportingDiagram = false
     @State private var isRenamingDiagram = false
@@ -13,7 +13,7 @@ struct DiagramListCellView: View {
     
     init(diagram: ApollonDiagram) {
         self.diagram = diagram
-        self._viewModel = ObservedObject(wrappedValue: DiagramViewModel(diagram: diagram))
+        self._viewModel = State(wrappedValue: DiagramViewModel(diagram: diagram))
     }
     
     var body: some View {

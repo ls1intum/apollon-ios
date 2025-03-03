@@ -6,20 +6,34 @@ import ApollonEdit
 struct DiagramDisplayView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    @ObservedObject var viewModel: DiagramViewModel
-    @State var diagram: ApollonDiagram
+    @Bindable var viewModel: DiagramViewModel
+    var diagram: ApollonDiagram
+    @State private var model = UMLModel()
     @State private var isExportingDiagram = false
     @State private var isRenamingDiagram = false
     @State private var newDiagramName = ""
+    @State private var id = 0
     
     var body: some View {
         ZStack {
-            ApollonEdit(umlModel: $diagram.model,
+            ApollonEdit(umlModel: $model,
                         diagramType: diagram.diagramType,
                         fontSize: 14.0,
                         themeColor: Color.accentColor,
                         diagramOffset: CGPoint(x: 0, y: 0),
                         isGridBackground: true)
+            .id(id)
+            .onDisappear {
+                diagram.model = model
+                modelContext.insert(diagram)
+                try? modelContext.save()
+            }
+            .onChange(of: diagram.model, initial: true) { oldValue, newValue in
+                let modelEnoded = try? JSONEncoder().encode(diagram.model)
+                let decoded = try? JSONDecoder().decode(UMLModel.self, from: modelEnoded ?? Data())
+                model = decoded ?? .init() // Use empty if re-encoding doesn't work. We're fucked then anyway
+                id += 1
+            }
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -49,6 +63,7 @@ struct DiagramDisplayView: View {
                         Label("Rename", systemImage: "pencil")
                     }
                     Button {
+                        diagram.model = model
                         viewModel.renderExport()
                         self.isExportingDiagram = true
                     } label: {

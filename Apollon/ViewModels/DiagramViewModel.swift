@@ -5,15 +5,16 @@ import ApollonView
 import PDFKit
 
 @MainActor
-class DiagramViewModel: ObservableObject {
+@Observable
+class DiagramViewModel {
     /// The locally persisted diagram
-    @Published var diagram: ApollonDiagram
+    var diagram: ApollonDiagram
     /// The exported JSON File
-    @Published var jsonFile: JSONFile?
+    var jsonFile: JSONFile?
     /// The exported PNG Image
-    @Published var pngImage: UIImage?
+    var pngImage: UIImage?
     /// The exported PDF File
-    @Published var pdfFile: URL?
+    var pdfFile: URL?
 
     init(diagram: ApollonDiagram) {
         self.diagram = diagram
