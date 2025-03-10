@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ExportDiagramModifier: ViewModifier {
-    @ObservedObject var viewModel: DiagramViewModel
+    var viewModel: DiagramViewModel
     @Binding var isExporting: Bool
 
     func body(content: Content) -> some View {
